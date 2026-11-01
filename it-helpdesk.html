@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IT Helpdesk & Asset Management System — Case study by Annisa Fazhira. Covers problem statement, business process, system design, ERD, wireframe, and testing results.">
+<title>IT Helpdesk & Asset Management System | Annisa Fazhira</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ── Tokens ── */
+:root {
+  --critical:#c0392b; --high:#e67e22; --medium:#2980b9; --low:#27ae60;
+  --sp-open-bg:#fef3e2; --sp-open-c:#c47a00;
+  --sp-prog-bg:#e8f2fc; --sp-prog-c:#1a6696;
+  --sp-res-bg:#e7f8ee;  --sp-res-c:#1a7a3c;
+  --sp-cls-bg:#f0f0ec;  --sp-cls-c:#69736e;
+}
+
+/* ── Back nav ── */
+.back-nav{position:sticky;top:0;z-index:10;background:#f6f6f1e8;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);height:72px;display:flex;align-items:center}
+.back-nav .inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.back-link{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);transition:color .2s}
+.back-link:hover{color:var(--green)}
+.back-logo{font-weight:800;letter-spacing:.08em;color:var(--ink)}
+.back-logo b{color:var(--green)}
+
+/* ── Hero ── */
+.hero-cs{padding:100px 0 80px;border-bottom:1px solid var(--line)}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.hero-tag{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:5px 12px;color:var(--green)}
+.hero-cs h1{font-size:clamp(42px,6.5vw,80px);line-height:.95;letter-spacing:-.05em;margin:0 0 24px}
+.hero-cs h1 em{color:var(--green);font-style:normal}
+.hero-desc{font-size:18px;color:var(--muted);line-height:1.7;max-width:640px;margin:0 0 40px}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;max-width:720px}
+.hm{background:#fff;padding:18px 20px}
+.hm label{display:block;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.hm span{font-size:14px;font-weight:600;color:var(--ink)}
+
+/* ── Case-study sections ── */
+.cs-section{padding:88px 0;border-bottom:1px solid var(--line)}
+.cs-header{display:grid;grid-template-columns:200px 1fr;gap:60px;align-items:start;margin-bottom:56px}
+.cs-num{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.cs-title{font-family:Georgia,serif;font-size:clamp(28px,4vw,44px);line-height:1.05;letter-spacing:-.04em;margin:0 0 16px}
+.cs-lead{font-size:15px;color:var(--muted);line-height:1.75;margin:0}
+.cs-sticky{position:sticky;top:88px}
+
+/* ── Problem cards ── */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.prob-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+.prob-card.pain{border-left:4px solid var(--critical)}
+.prob-card.goal{border-left:4px solid var(--green)}
+.prob-icon{font-size:28px;margin-bottom:16px}
+.prob-card h3{font-size:16px;font-weight:700;margin:0 0 12px;font-family:Arial,sans-serif}
+.prob-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+.prob-list li{font-size:13px;color:var(--muted);padding-left:18px;position:relative;line-height:1.55}
+.prob-list li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%}
+.prob-list.pain li::before{background:var(--critical)}
+.prob-list.goal li::before{background:var(--green)}
+.quote-box{background:var(--green);color:#fff;border-radius:20px;padding:36px;margin-top:20px;grid-column:span 2}
+.quote-box p{font:italic 18px/1.6 Georgia,serif;margin:0 0 12px}
+.quote-box cite{font-size:12px;opacity:.7;font-style:normal}
+
+/* ── Business Process ── */
+.bp-flow{display:flex;align-items:stretch;gap:0;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:24px}
+.bp-step{flex:1;background:#fff;padding:22px 18px;text-align:center;position:relative}
+.bp-step:not(:last-child)::after{content:'&#8594;';position:absolute;right:-14px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--green);z-index:2;background:#fff;width:28px;line-height:28px;border-radius:50%}
+.bp-num{font-size:10px;font-weight:800;color:var(--green);letter-spacing:.1em;margin-bottom:8px}
+.bp-icon{font-size:26px;margin-bottom:10px}
+.bp-step h4{font-size:13px;font-weight:700;margin:0 0 6px;font-family:Arial,sans-serif}
+.bp-step p{font-size:11px;color:var(--muted);line-height:1.5;margin:0}
+.bp-actors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.actor-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.actor-icon{font-size:30px;margin-bottom:12px}
+.actor-card h4{font-size:14px;font-weight:700;margin:0 0 10px;font-family:Arial,sans-serif;color:var(--green)}
+.actor-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.actor-card ul li{font-size:12px;color:var(--muted);padding-left:14px;position:relative}
+.actor-card ul li::before{content:'&#8250;';position:absolute;left:0;color:var(--green)}
+
+/* ── System Design ── */
+.design-tabs{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:32px;width:fit-content}
+.dtab{padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:var(--muted);transition:all .2s;border-right:1px solid var(--line)}
+.dtab:last-child{border-right:none}
+.dtab.active{background:var(--green);color:#fff}
+.diagram-panel{display:none}
+.diagram-panel.active{display:block}
+
+/* Use Case Diagram */
+.uc-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;overflow-x:auto}
+.uc-grid{display:grid;grid-template-columns:140px 1fr 140px;gap:0;min-width:680px}
+.actor-box{display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:60px}
+.actor-fig{width:36px;height:36px;border-radius:50%;background:var(--accent-light, #e1ebe6);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;font-size:18px}
+.actor-name{font-size:11px;font-weight:700;text-align:center;color:var(--green)}
+.uc-cases{display:flex;flex-direction:column;gap:10px;padding:20px 0}
+.uc-case{border:1px solid var(--green);border-radius:99px;padding:8px 20px;font-size:12px;font-weight:600;text-align:center;background:#fff;color:var(--ink);position:relative}
+.uc-system-box{border:2px dashed var(--green);border-radius:16px;padding:16px 12px;margin:0 12px}
+.uc-sys-label{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;text-align:center}
+
+/* Activity Diagram */
+.act-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+.act-swim{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.swim-lane{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.swim-header{background:var(--green);color:#fff;padding:10px 14px;font-size:11px;font-weight:800;text-align:center;letter-spacing:.08em;text-transform:uppercase}
+.swim-body{padding:14px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.act-node{background:#f0f4f2;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:11px;font-weight:600;text-align:center;width:100%}
+.act-node.start{background:var(--green);color:#fff;border-radius:99px;border:none}
+.act-node.end{background:var(--ink);color:#fff;border-radius:99px;border:none;font-size:10px}
+.act-node.decision{background:#fff8e1;border-color:#e67e22;font-size:10px}
+.act-arrow{font-size:14px;color:var(--green);line-height:1}
+.act-line{width:1px;height:16px;background:var(--line);margin:0 auto}
+
+/* ERD */
+.erd-wrap{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+.erd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.erd-tbl{background:#f6f6f1;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.erd-th{background:var(--green);color:#fff;padding:8px 12px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.erd-body{padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+.ef{font-size:11px;color:var(--muted);line-height:1.5}
+.ef.pk{color:var(--green);font-weight:700}
+.ef.fk{color:var(--high)}
+.erd-rel{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rel-card{background:#f0f4f2;border-radius:10px;padding:14px;font-size:12px;text-align:center}
+.rel-card strong{display:block;color:var(--green);font-size:11px;margin-bottom:4px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+
+/* Wireframe */
+.wf-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.wf-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.wf-label{padding:12px 16px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#f8faf9;border-bottom:1px solid var(--line)}
+.wf-body{padding:16px}
+.wf-bar{height:30px;background:#e8ece8;border-radius:6px;display:flex;align-items:center;gap:5px;padding:0 10px;margin-bottom:12px}
+.wf-dot{width:6px;height:6px;border-radius:50%;background:#9da8a2}
+.wf-shell{display:grid;grid-template-columns:70px 1fr;gap:8px;background:#f0f4f2;border-radius:8px;overflow:hidden;min-height:160px}
+.wf-sidebar{background:#244d43;padding:10px 8px;display:flex;flex-direction:column;gap:6px}
+.wf-si{height:12px;border-radius:4px;background:rgba(255,255,255,.2)}
+.wf-si.act{background:rgba(255,255,255,.5)}
+.wf-content{padding:10px;display:flex;flex-direction:column;gap:8px}
+.wf-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.wf-kpi{height:28px;background:#fff;border-radius:4px;border:1px solid var(--line)}
+.wf-chart-row{display:grid;grid-template-columns:3fr 2fr;gap:4px}
+.wf-chart-box{height:50px;background:#fff;border-radius:4px;border:1px solid var(--line)}
+.wf-table{height:60px;background:#fff;border-radius:4px;border:1px solid var(--line)}
+
+/* App Preview */
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.preview-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.preview-label{padding:10px 16px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:#f8faf9;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.preview-badge{font-size:9px;background:var(--green);color:#fff;padding:2px 8px;border-radius:99px;letter-spacing:.04em}
+.preview-body{padding:16px}
+
+/* Mock screens */
+.mock-topbar{height:32px;background:#244d43;border-radius:8px 8px 0 0;display:flex;align-items:center;padding:0 12px;gap:8px;margin-bottom:0}
+.mock-topbar span{color:rgba(255,255,255,.6);font-size:10px;font-weight:700;margin-left:8px}
+.mock-screen{background:#f0f4f2;border-radius:0 0 8px 8px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.mock-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.mock-kpi{background:#fff;border-radius:6px;padding:8px;text-align:center;border:1px solid var(--line)}
+.mock-kpi .v{font:700 16px Georgia,serif;display:block}
+.mock-kpi .l{font-size:9px;color:var(--muted)}
+.mock-charts{display:grid;grid-template-columns:3fr 2fr;gap:6px}
+.mock-chart{background:#fff;border-radius:6px;border:1px solid var(--line);padding:8px;min-height:70px}
+.mock-chart-title{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+.mock-bars{display:flex;gap:4px;align-items:flex-end;height:44px}
+.mock-bar{flex:1;border-radius:3px 3px 0 0}
+.mock-donut{display:flex;align-items:center;gap:8px;height:44px}
+.mock-donut-svg{flex-shrink:0}
+.mock-legend{display:flex;flex-direction:column;gap:4px}
+.mock-legend span{font-size:9px;display:flex;align-items:center;gap:4px}
+.mock-legend span::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+.mock-tbl-wrap{background:#fff;border-radius:6px;border:1px solid var(--line);overflow:hidden}
+.mock-tbl-head{background:#f8faf9;border-bottom:1px solid var(--line);padding:6px 8px;display:grid;grid-template-columns:30px 2fr 60px 60px 60px;gap:4px}
+.mock-tbl-head span{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.mock-tbl-row{padding:5px 8px;border-bottom:1px solid #f0f0ec;display:grid;grid-template-columns:30px 2fr 60px 60px 60px;gap:4px;align-items:center}
+.mock-tbl-row:last-child{border-bottom:none}
+.mock-tbl-row span{font-size:9px;color:var(--ink)}
+.mock-pill{display:inline-block;padding:1px 6px;border-radius:99px;font-size:8px;font-weight:700}
+.mock-pdot{width:6px;height:6px;border-radius:50%;display:inline-block}
+
+/* Ticket form mockup */
+.mock-form{background:#fff;border-radius:6px;border:1px solid var(--line);padding:12px;display:flex;flex-direction:column;gap:8px}
+.mock-form-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mock-field{display:flex;flex-direction:column;gap:3px}
+.mock-field label{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.mock-field .input-sim{height:22px;background:#f9fbf9;border:1px solid var(--line);border-radius:4px}
+.mock-btn{height:26px;background:var(--green);border-radius:99px;width:100px}
+
+/* Testing */
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.test-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.test-card-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.test-card-head h4{font-size:13px;font-weight:800;margin:0;font-family:Arial,sans-serif;color:var(--ink)}
+.test-result-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:.04em}
+.pass{background:var(--sp-res-bg);color:var(--sp-res-c)}
+.fail{background:#fde8e8;color:var(--critical)}
+.test-table{width:100%;border-collapse:collapse;font-size:12px}
+.test-table th{padding:8px 14px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;background:#f8faf9;border-bottom:1px solid var(--line)}
+.test-table td{padding:9px 14px;border-bottom:1px solid #f4f4f0;color:var(--ink);vertical-align:top}
+.test-table tr:last-child td{border-bottom:none}
+.stat-pass{color:var(--sp-res-c);font-weight:700}
+.stat-fail{color:var(--critical);font-weight:700}
+.result-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.rs-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+.rs-val{font:700 32px Georgia,serif;display:block;margin-bottom:4px}
+.rs-val.green{color:var(--green)}
+.rs-val.orange{color:var(--high)}
+.rs-val.red{color:var(--critical)}
+.rs-label{font-size:12px;color:var(--muted)}
+.limitation-list{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.limit-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+.limit-item::before{content:'⚠';flex-shrink:0;font-size:14px;margin-top:1px}
+
+/* Contact footer */
+.cs-contact{background:var(--green);color:#fff;border-radius:28px;padding:56px;display:flex;justify-content:space-between;gap:40px;align-items:center;margin:80px 0}
+.cs-contact .kicker{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a8d4c5;margin-bottom:10px}
+.cs-contact h2{font-family:Georgia,serif;font-size:clamp(30px,4vw,46px);margin:0 0 10px;line-height:1.1}
+.cs-contact p{color:#d4e0db;font-size:15px;max-width:480px;margin:0}
+
+/* Responsive */
+@media(max-width:900px){
+  .cs-header{grid-template-columns:1fr;gap:20px}
+  .cs-sticky{position:static}
+  .problem-grid,.test-grid,.preview-grid{grid-template-columns:1fr}
+  .quote-box{grid-column:1}
+  .erd-grid{grid-template-columns:1fr 1fr}
+  .bp-actors{grid-template-columns:1fr}
+  .result-summary{grid-template-columns:1fr 1fr}
+  .limitation-list{grid-template-columns:1fr}
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .wf-wrap{grid-template-columns:1fr}
+  .erd-rel{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .bp-flow{flex-direction:column}
+  .bp-step::after{display:none}
+  .hero-meta{grid-template-columns:1fr}
+  .erd-grid{grid-template-columns:1fr}
+  .result-summary{grid-template-columns:1fr}
+  .cs-contact{display:block;padding:36px}
+  .cs-contact .buttons{margin-top:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Back Nav ── -->
+<nav class="back-nav">
+  <div class="wrap inner">
+    <a class="back-link" href="index.html">&#8592; Back to Portfolio</a>
+    <a class="back-logo" href="index.html">Annisa Fazhira<b>.</b></a>
+  </div>
+</nav>
+
+<!-- ── Hero / Project Overview ── -->
+<header class="hero-cs">
+  <div class="wrap">
+    <div class="hero-tags">
+      <span class="hero-tag">IT Support</span>
+      <span class="hero-tag">System Analysis</span>
+      <span class="hero-tag">Database Design</span>
+      <span class="hero-tag">Personal Project</span>
+    </div>
+    <h1>IT Helpdesk &amp; <em>Asset Management</em> System</h1>
+    <p class="hero-desc">Web-based IT service management system for structured incident tracking, IT asset inventory, maintenance scheduling, and SLA-aware performance monitoring — built to replace informal IT support workflows with a traceable, data-driven process.</p>
+    <div class="hero-meta">
+      <div class="hm">
+        <label>Role</label>
+        <span>System Analyst &amp; Developer</span>
+      </div>
+      <div class="hm">
+        <label>Duration</label>
+        <span>Oct 2026 &#8212; Present</span>
+      </div>
+      <div class="hm">
+        <label>Tools</label>
+        <span>Figma, Draw.io, MySQL</span>
+      </div>
+      <div class="hm">
+        <label>Status</label>
+        <span>&#x1F7E2; In Progress</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── 01 Problem Statement ── -->
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-header">
+      <div class="cs-sticky">
+        <div class="cs-num">01</div>
+        <h2 class="cs-title">Problem Statement</h2>
+        <p class="cs-lead">Understanding the root cause before designing any solution.</p>
+      </div>
+      <div>
+        <div class="problem-grid">
+          <div class="prob-card pain">
+            <div class="prob-icon">&#x26A0;&#xFE0F;</div>
+            <h3>Pain Points Identified</h3>
+            <ul class="prob-list pain">
+              <li>IT incident reports received via WhatsApp, email, and verbal requests — no single intake channel</li>
+              <li>No ticket tracking — issues are forgotten, duplicated, or never resolved</li>
+              <li>Technician workload is invisible — no way to see who is handling what</li>
+              <li>IT asset inventory stored in spreadsheets that are rarely updated</li>
+              <li>No record of which device is assigned to whom or its current condition</li>
+              <li>Maintenance schedules exist only in the technician's head — preventive maintenance is skipped</li>
+              <li>Management has zero visibility into IT service performance</li>
+            </ul>
+          </div>
+          <div class="prob-card goal">
+            <div class="prob-icon">&#x1F3AF;</div>
+            <h3>Goals &amp; Expected Outcomes</h3>
+            <ul class="prob-list goal">
+              <li>Centralized IT ticket intake with structured categorization and priority</li>
+              <li>Full ticket lifecycle tracking: Open &#8594; Assigned &#8594; In Progress &#8594; Resolved &#8594; Closed</li>
+              <li>Clear technician assignment and workload visibility</li>
+              <li>Comprehensive IT asset registry with condition, location, and assigned-user tracking</li>
+              <li>Maintenance scheduling with history per asset</li>
+              <li>SLA enforcement — auto-flag overdue tickets and alert IT leads</li>
+              <li>Dashboard with KPIs so management can monitor IT operations performance</li>
+            </ul>
+          </div>
+          <div class="quote-box">
+            <p>"The biggest problem in IT support isn't technical complexity &#8212; it's the absence of structure. When nothing is tracked, nothing improves."</p>
+            <cite>&#8212; Observation from IT Support Internship at Pengadilan Agama Tanjung Pati, Jan&#8211;Mar 2025</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 02 Business Process ── -->
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-header">
+      <div class="cs-sticky">
+        <div class="cs-num">02</div>
+        <h2 class="cs-title">Business Process</h2>
+        <p class="cs-lead">Mapping how incidents flow from report to resolution, and how assets are managed across their lifecycle.</p>
+      </div>
+      <div>
+        <!-- Ticket Flow -->
+        <p style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;">Incident Ticket Flow</p>
+        <div class="bp-flow">
+          <div class="bp-step">
+            <div class="bp-num">01</div>
+            <div class="bp-icon">&#x1F4E9;</div>
+            <h4>Report</h4>
+            <p>Employee submits incident via web form with category, priority, and description</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">02</div>
+            <div class="bp-icon">&#x1F50D;</div>
+            <h4>Triage</h4>
+            <p>IT Admin reviews ticket, validates priority, assigns SLA target and technician</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">03</div>
+            <div class="bp-icon">&#x2699;&#xFE0F;</div>
+            <h4>Handle</h4>
+            <p>Technician diagnoses, troubleshoots, and logs action notes in the ticket</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">04</div>
+            <div class="bp-icon">&#x2705;</div>
+            <h4>Resolve</h4>
+            <p>Ticket marked Resolved with documented solution; SLA compliance calculated</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">05</div>
+            <div class="bp-icon">&#x1F4CB;</div>
+            <h4>Close</h4>
+            <p>Reporter confirms resolution; ticket archived with full audit trail</p>
+          </div>
+        </div>
+
+        <!-- Asset Flow -->
+        <p style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:28px 0 14px;">Asset Lifecycle Flow</p>
+        <div class="bp-flow">
+          <div class="bp-step">
+            <div class="bp-num">01</div>
+            <div class="bp-icon">&#x1F4E6;</div>
+            <h4>Register</h4>
+            <p>New asset entered with full spec, serial number, and purchase/warranty data</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">02</div>
+            <div class="bp-icon">&#x1F91D;</div>
+            <h4>Assign</h4>
+            <p>Asset assigned to department or user; status changes to Assigned</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">03</div>
+            <div class="bp-icon">&#x1F527;</div>
+            <h4>Maintain</h4>
+            <p>Scheduled or corrective maintenance logged with technician notes and outcome</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">04</div>
+            <div class="bp-icon">&#x1F504;</div>
+            <h4>Transfer</h4>
+            <p>Asset reassigned or moved; transfer history recorded with date and reason</p>
+          </div>
+          <div class="bp-step">
+            <div class="bp-num">05</div>
+            <div class="bp-icon">&#x1F6AB;</div>
+            <h4>Retire</h4>
+            <p>End-of-life asset flagged as Retired with disposal notes and date</p>
+          </div>
+        </div>
+
+        <!-- Actor Roles -->
+        <div class="bp-actors">
+          <div class="actor-card">
+            <div class="actor-icon">&#x1F464;</div>
+            <h4>Employee (Reporter)</h4>
+            <ul>
+              <li>Submit IT incident or service request</li>
+              <li>Track own ticket status</li>
+              <li>Confirm resolution and close ticket</li>
+              <li>View assigned assets</li>
+            </ul>
+          </div>
+          <div class="actor-card">
+            <div class="actor-icon">&#x1F4BB;</div>
+            <h4>IT Technician</h4>
+            <ul>
+              <li>View and handle assigned tickets</li>
+              <li>Update ticket status and add action notes</li>
+              <li>Perform and log asset maintenance</li>
+              <li>Mark tickets as Resolved</li>
+            </ul>
+          </div>
+          <div class="actor-card">
+            <div class="actor-icon">&#x1F9D1;&#x200D;&#x1F4BC;</div>
+            <h4>IT Admin</h4>
+            <ul>
+              <li>Full ticket management and assignment</li>
+              <li>Manage asset registry and categories</li>
+              <li>Monitor SLA compliance dashboard</li>
+              <li>Generate reports and manage users/roles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03 System Design ── -->
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-header">
+      <div class="cs-sticky">
+        <div class="cs-num">03</div>
+        <h2 class="cs-title">System Design</h2>
+        <p class="cs-lead">Use case diagram, activity diagram, entity-relationship model, and UI wireframe.</p>
+      </div>
+      <div>
+        <!-- Tabs -->
+        <div class="design-tabs">
+          <div class="dtab active" onclick="switchDiagram(this,'uc')">Use Case</div>
+          <div class="dtab" onclick="switchDiagram(this,'act')">Activity</div>
+          <div class="dtab" onclick="switchDiagram(this,'erd')">ERD</div>
+          <div class="dtab" onclick="switchDiagram(this,'wf')">Wireframe</div>
+        </div>
+
+        <!-- USE CASE -->
+        <div id="diag-uc" class="diagram-panel active">
+          <div class="uc-wrap">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;text-align:center;">IT Helpdesk &amp; Asset Management System — Use Case Diagram</div>
+            <div class="uc-grid">
+              <!-- Left actor: Employee -->
+              <div class="actor-box">
+                <div class="actor-fig">&#x1F464;</div>
+                <div class="actor-name">Employee</div>
+              </div>
+
+              <!-- System box -->
+              <div class="uc-system-box">
+                <div class="uc-sys-label">&#171; System Boundary &#187; IT Helpdesk System</div>
+                <div class="uc-cases">
+                  <div class="uc-case">Submit Ticket</div>
+                  <div class="uc-case">Track Ticket Status</div>
+                  <div class="uc-case">Confirm Resolution</div>
+                  <div class="uc-case" style="border-color:var(--muted);color:var(--muted);">&#171;include&#187; Assign Technician</div>
+                  <div class="uc-case">Manage Asset Inventory</div>
+                  <div class="uc-case">Schedule Maintenance</div>
+                  <div class="uc-case" style="border-color:var(--muted);color:var(--muted);">&#171;include&#187; Log Action Notes</div>
+                  <div class="uc-case">View SLA Dashboard</div>
+                  <div class="uc-case">Generate Reports</div>
+                  <div class="uc-case">Manage Users &amp; Roles</div>
+                </div>
+              </div>
+
+              <!-- Right actors: IT Technician + IT Admin (stacked) -->
+              <div style="display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding-top:20px;gap:40px">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div class="actor-fig">&#x1F4BB;</div>
+                  <div class="actor-name">IT Technician</div>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+                  <div class="actor-fig" style="background:#244d43;color:#fff;border-color:#244d43;">&#x1F9D1;&#x200D;&#x1F4BC;</div>
+                  <div class="actor-name">IT Admin</div>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:20px;">Employee: Submit Ticket, Track Status, Confirm Resolution &#8226; Technician: Handle Tickets, Log Notes, Maintenance &#8226; Admin: Full access + Reports + User Management</p>
+          </div>
+        </div>
+
+        <!-- ACTIVITY DIAGRAM -->
+        <div id="diag-act" class="diagram-panel">
+          <div class="act-wrap">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;text-align:center;">Activity Diagram — Incident Ticket Lifecycle</div>
+            <div class="act-swim">
+              <!-- Employee lane -->
+              <div class="swim-lane">
+                <div class="swim-header">Employee</div>
+                <div class="swim-body">
+                  <div class="act-node start">&#11044; Start</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Fill Ticket Form</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Select Category &amp; Priority</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Submit Ticket</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node" style="background:#f0f0ec;color:var(--muted);">&#8943; Wait for Assignment</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node decision">Resolved notification received?</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Confirm &amp; Close Ticket</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node end">&#11044; End</div>
+                </div>
+              </div>
+              <!-- IT Admin lane -->
+              <div class="swim-lane">
+                <div class="swim-header">IT Admin</div>
+                <div class="swim-body">
+                  <div class="act-node" style="background:#f0f0ec;color:var(--muted);">&#8943; Wait for new ticket</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Review &amp; Validate Ticket</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node decision">Priority valid?</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Assign Technician</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Set SLA Target</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node" style="background:#f0f0ec;color:var(--muted);">&#8943; Monitor SLA Clock</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node decision">SLA breached?</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Escalate &amp; Notify Lead</div>
+                </div>
+              </div>
+              <!-- Technician lane -->
+              <div class="swim-lane">
+                <div class="swim-header">IT Technician</div>
+                <div class="swim-body">
+                  <div class="act-node" style="background:#f0f0ec;color:var(--muted);">&#8943; Wait for assignment</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">View Ticket Detail</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Update Status: In Progress</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Diagnose &amp; Troubleshoot</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Log Action Notes</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node decision">Issue resolved?</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">Mark as Resolved</div>
+                  <div class="act-arrow">&#8595;</div>
+                  <div class="act-node">SLA Compliance Recorded</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ERD -->
+        <div id="diag-erd" class="diagram-panel">
+          <div class="erd-wrap">
+            <div style="font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;text-align:center;">Entity Relationship Diagram — IT Helpdesk System</div>
+            <div class="erd-grid">
+              <div class="erd-tbl">
+                <div class="erd-th">users</div>
+                <div class="erd-body">
+                  <div class="ef pk">PK &nbsp;id (INT)</div>
+                  <div class="ef">name (VARCHAR)</div>
+                  <div class="ef">email (VARCHAR, UNIQUE)</div>
+                  <div class="ef fk">FK &nbsp;role_id</div>
+                  <div class="ef">department (VARCHAR)</div>
+                  <div class="ef">phone (VARCHAR)</div>
+                  <div class="ef">is_active (TINYINT)</div>
+                  <div class="ef">created_at (TIMESTAMP)</div>
+                </div>
+              </div>
+              <div class="erd-tbl">
+                <div class="erd-th">tickets</div>
+                <div class="erd-body">
+                  <div class="ef pk">PK &nbsp;id (INT)</div>
+                  <div class="ef">ticket_code (VARCHAR, UNIQUE)</div>
+                  <div class="ef">title (VARCHAR)</div>
+                  <div class="ef">description (TEXT)</div>
+                  <div class="ef fk">FK &nbsp;category_id</div>
+                  <div class="ef">priority (ENUM: Critical, High, Medium, Low)</div>
+                  <div class="ef">status (ENUM: Open, Assigned, In Progress, Resolved, Closed)</div>
+                  <div class="ef fk">FK &nbsp;reporter_id</div>
+                  <div class="ef fk">FK &nbsp;technician_id</div>
+                  <div class="ef">sla_target (DATETIME)</div>
+                  <div class="ef">sla_status (ENUM: Met, Breached)</div>
+                  <div class="ef">created_at (TIMESTAMP)</div>
+                  <div class="ef">resolved_at (TIMESTAMP, NULL)</div>
+                </div>
+              </div>
+              <div class="erd-tbl">
+                <div class="erd-th">assets</div>
+                <div class="erd-body">
+                  <div class="ef pk">PK &nbsp;id (INT)</div>
+                  <div class="ef">asset_code (VARCHAR, UNIQUE)</div>
+                  <div class="ef">name (VARCHAR)</div>
+                  <div class="ef fk">FK &nbsp;category_id</div>
+                  <div class="ef">brand (VARCHAR)</div>
+                  <div class="ef">model (VARCHAR)</div>
+                  <div class="ef">serial_number (VARCHAR)</div>
+                  <div class="ef">condition (ENUM: Good, Needs Repair, Faulty)</div>
+                  <div class="ef">status (ENUM: Available, Assigned, Maintenance, Retired)</div>
+                  <div class="ef fk">FK &nbsp;assigned_to (user_id)</div>
+                  <div class="ef fk">FK &nbsp;location_id</div>
+                  <div class="ef">purchase_date (DATE)</div>
+                  <div class="ef">warranty_end (DATE)</div>
+                </div>
+              </div>
+              <div class="erd-tbl">
+                <div class="erd-th">maintenance_records</div>
+                <div class="erd-body">
+                  <div class="ef pk">PK &nbsp;id (INT)</div>
+                  <div class="ef fk">FK &nbsp;asset_id</div>
+                  <div class="ef fk">FK &nbsp;technician_id</div>
+                  <div class="ef">type (ENUM: Preventive, Corrective)</div>
+                  <div class="ef">scheduled_date (DATE)</div>
+                  <div class="ef">completed_date (DATE, NULL)</div>
+                  <div class="ef">action_notes (TEXT)</div>
+                  <div class="ef">result (ENUM: Completed, Failed, Rescheduled)</div>
+                  <div class="ef">created_at (TIMESTAMP)</div>
+                </div>
+              </div>
+            </div>
+            <div class="erd-rel">
+              <div class="rel-card">
+                <strong>users &#8594; tickets</strong>
+                One user (reporter) can have many tickets &#8226; One technician can handle many tickets
+              </div>
+              <div class="rel-card">
+                <strong>tickets &#8594; ticket_categories</strong>
+                Each ticket belongs to one category &#8226; One category has many tickets
+              </div>
+              <div class="rel-card">
+                <strong>assets &#8594; maintenance_records</strong>
+                One asset can have many maintenance records &#8226; One technician logs many records
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WIREFRAME -->
+        <div id="diag-wf" class="diagram-panel">
+          <div class="wf-wrap">
+            <!-- Dashboard Wireframe -->
+            <div class="wf-card">
+              <div class="wf-label">Dashboard — Admin View</div>
+              <div class="wf-body">
+                <div class="wf-bar">
+                  <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+                  <span style="margin-left:8px;font-size:10px;color:var(--muted);">IT Helpdesk System</span>
+                </div>
+                <div class="wf-shell">
+                  <div class="wf-sidebar">
+                    <div class="wf-si act"></div>
+                    <div class="wf-si"></div>
+                    <div class="wf-si"></div>
+                    <div class="wf-si"></div>
+                  </div>
+                  <div class="wf-content">
+                    <div class="wf-kpi-row">
+                      <div class="wf-kpi"></div>
+                      <div class="wf-kpi"></div>
+                      <div class="wf-kpi"></div>
+                      <div class="wf-kpi"></div>
+                    </div>
+                    <div class="wf-chart-row">
+                      <div class="wf-chart-box"></div>
+                      <div class="wf-chart-box"></div>
+                    </div>
+                    <div class="wf-table"></div>
+                  </div>
+                </div>
+                <p style="font-size:11px;color:var(--muted);margin:10px 0 0;text-align:center;">KPI cards → Charts → Recent ticket table</p>
+              </div>
+            </div>
+            <!-- Ticket List Wireframe -->
+            <div class="wf-card">
+              <div class="wf-label">Ticket List — Technician View</div>
+              <div class="wf-body">
+                <div class="wf-bar">
+                  <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+                  <span style="margin-left:8px;font-size:10px;color:var(--muted);">IT Helpdesk System</span>
+                </div>
+                <div class="wf-shell">
+                  <div class="wf-sidebar">
+                    <div class="wf-si"></div>
+                    <div class="wf-si act"></div>
+                    <div class="wf-si"></div>
+                    <div class="wf-si"></div>
+                  </div>
+                  <div class="wf-content">
+                    <div style="display:flex;gap:6px;margin-bottom:4px">
+                      <div style="height:20px;flex:1;background:#f0f0ec;border-radius:4px;border:1px solid var(--line)"></div>
+                      <div style="height:20px;width:60px;background:var(--green);border-radius:4px;opacity:.3"></div>
+                    </div>
+                    <div class="wf-table"></div>
+                    <div style="height:8px;background:#f0f0ec;border-radius:4px;width:50%;margin:0 auto"></div>
+                  </div>
+                </div>
+                <p style="font-size:11px;color:var(--muted);margin:10px 0 0;text-align:center;">Search/filter bar → Full ticket table with status &amp; SLA</p>
+              </div>
+            </div>
+            <!-- Asset Inventory Wireframe -->
+            <div class="wf-card">
+              <div class="wf-label">Asset Inventory</div>
+              <div class="wf-body">
+                <div class="wf-bar">
+                  <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+                  <span style="margin-left:8px;font-size:10px;color:var(--muted);">IT Helpdesk System</span>
+                </div>
+                <div class="wf-shell">
+                  <div class="wf-sidebar">
+                    <div class="wf-si"></div>
+                    <div class="wf-si"></div>
+                    <div class="wf-si act"></div>
+                    <div class="wf-si"></div>
+                  </div>
+                  <div class="wf-content">
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+                      <div style="height:55px;background:#fff;border-radius:6px;border:1px solid var(--line)"></div>
+                      <div style="height:55px;background:#fff;border-radius:6px;border:1px solid var(--line)"></div>
+                      <div style="height:55px;background:#fff;border-radius:6px;border:1px solid var(--line)"></div>
+                      <div style="height:55px;background:#fff;border-radius:6px;border:1px solid var(--line)"></div>
+                      <div style="height:55px;background:#fff;border-radius:6px;border:1px solid var(--line)"></div>
+                      <div style="height:55px;background:#fff;border-radius:6px;border:1px solid var(--line)"></div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-size:11px;color:var(--muted);margin:10px 0 0;text-align:center;">Asset cards grid with status, condition, and assigned user</p>
+              </div>
+            </div>
+            <!-- Submit Ticket Wireframe -->
+            <div class="wf-card">
+              <div class="wf-label">Submit Ticket — Employee View</div>
+              <div class="wf-body">
+                <div class="wf-bar">
+                  <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+                  <span style="margin-left:8px;font-size:10px;color:var(--muted);">IT Helpdesk System</span>
+                </div>
+                <div class="wf-shell">
+                  <div class="wf-sidebar">
+                    <div class="wf-si"></div>
+                    <div class="wf-si"></div>
+                    <div class="wf-si"></div>
+                    <div class="wf-si act"></div>
+                  </div>
+                  <div class="wf-content">
+                    <div class="mock-form" style="gap:5px;padding:8px">
+                      <div class="mock-form-row">
+                        <div style="height:16px;background:#f0f0ec;border-radius:3px"></div>
+                        <div style="height:16px;background:#f0f0ec;border-radius:3px"></div>
+                      </div>
+                      <div class="mock-form-row">
+                        <div style="height:16px;background:#f0f0ec;border-radius:3px"></div>
+                        <div style="height:16px;background:#f0f0ec;border-radius:3px"></div>
+                      </div>
+                      <div style="height:28px;background:#f0f0ec;border-radius:3px"></div>
+                      <div style="height:20px;width:80px;background:var(--green);border-radius:99px;opacity:.4"></div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-size:11px;color:var(--muted);margin:10px 0 0;text-align:center;">Structured form with category, priority, and description</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 04 Application Preview ── -->
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-header">
+      <div class="cs-sticky">
+        <div class="cs-num">04</div>
+        <h2 class="cs-title">Application Preview</h2>
+        <p class="cs-lead">Prototype screens showing the system's core interfaces and interactions.</p>
+      </div>
+      <div>
+        <div class="preview-grid">
+
+          <!-- Dashboard -->
+          <div class="preview-card">
+            <div class="preview-label">Dashboard <span class="preview-badge">Admin View</span></div>
+            <div class="preview-body">
+              <div class="mock-topbar"><span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span><span>IT Helpdesk &#8212; Dashboard</span></div>
+              <div class="mock-screen">
+                <div class="mock-kpis">
+                  <div class="mock-kpi"><span class="v" style="color:var(--high)">8</span><span class="l">Open</span></div>
+                  <div class="mock-kpi"><span class="v" style="color:var(--medium)">5</span><span class="l">In Progress</span></div>
+                  <div class="mock-kpi"><span class="v" style="color:var(--low)">24</span><span class="l">Resolved</span></div>
+                  <div class="mock-kpi"><span class="v" style="color:var(--critical)">3</span><span class="l">Critical</span></div>
+                </div>
+                <div class="mock-charts">
+                  <div class="mock-chart">
+                    <div class="mock-chart-title">Tickets by Category</div>
+                    <div class="mock-bars">
+                      <div class="mock-bar" style="height:64px;background:#244d43"></div>
+                      <div class="mock-bar" style="height:50px;background:#3a7a6a"></div>
+                      <div class="mock-bar" style="height:38px;background:#e67e22"></div>
+                      <div class="mock-bar" style="height:22px;background:#2980b9"></div>
+                      <div class="mock-bar" style="height:12px;background:#9da8a2"></div>
+                    </div>
+                  </div>
+                  <div class="mock-chart">
+                    <div class="mock-chart-title">SLA Compliance</div>
+                    <div class="mock-donut">
+                      <svg class="mock-donut-svg" width="52" height="52" viewBox="0 0 52 52">
+                        <circle cx="26" cy="26" r="18" fill="none" stroke="#e1ebe6" stroke-width="8"/>
+                        <circle cx="26" cy="26" r="18" fill="none" stroke="#244d43" stroke-width="8" stroke-dasharray="82 113" stroke-dashoffset="0" transform="rotate(-90 26 26)"/>
+                        <circle cx="26" cy="26" r="18" fill="none" stroke="#c0392b" stroke-width="8" stroke-dasharray="18 113" stroke-dashoffset="-82" transform="rotate(-90 26 26)"/>
+                        <text x="26" y="29" text-anchor="middle" font-size="9" font-weight="800" fill="#244d43">82%</text>
+                      </svg>
+                      <div class="mock-legend">
+                        <span style="color:#244d43;">Met: 82%</span>
+                        <span style="color:#c0392b;">Breach: 18%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-tbl-wrap">
+                  <div class="mock-tbl-head">
+                    <span>ID</span><span>Issue</span><span>Priority</span><span>Status</span><span>SLA</span>
+                  </div>
+                  <div class="mock-tbl-row">
+                    <span>#037</span><span>Server storage full</span>
+                    <span><span class="mock-pdot" style="background:var(--critical)"></span></span>
+                    <span><span class="mock-pill" style="background:var(--sp-prog-bg);color:var(--sp-prog-c)">In Prog</span></span>
+                    <span style="color:var(--critical);font-weight:700;font-size:8px">&#9888; Breach</span>
+                  </div>
+                  <div class="mock-tbl-row">
+                    <span>#036</span><span>VPN access blocked</span>
+                    <span><span class="mock-pdot" style="background:var(--high)"></span></span>
+                    <span><span class="mock-pill" style="background:var(--sp-open-bg);color:var(--sp-open-c)">Open</span></span>
+                    <span style="color:var(--critical);font-weight:700;font-size:8px">&#9888; Breach</span>
+                  </div>
+                  <div class="mock-tbl-row">
+                    <span>#035</span><span>Printer not connecting</span>
+                    <span><span class="mock-pdot" style="background:var(--medium)"></span></span>
+                    <span><span class="mock-pill" style="background:var(--sp-prog-bg);color:var(--sp-prog-c)">In Prog</span></span>
+                    <span style="color:var(--low);font-weight:700;font-size:8px">&#10003; Met</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ticket Detail -->
+          <div class="preview-card">
+            <div class="preview-label">Ticket Detail <span class="preview-badge">Technician View</span></div>
+            <div class="preview-body">
+              <div class="mock-topbar"><span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span><span>Ticket #037 — Detail</span></div>
+              <div class="mock-screen" style="gap:6px">
+                <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:10px">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+                    <div>
+                      <div style="font-size:9px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase">#TKT-0037 &#8226; Hardware</div>
+                      <div style="font-size:13px;font-weight:700;color:var(--ink)">Server storage full &#8212; Finance server</div>
+                    </div>
+                    <span class="mock-pill" style="background:var(--sp-prog-bg);color:var(--sp-prog-c);font-size:9px">In Progress</span>
+                  </div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap">
+                    <span class="mock-pill" style="background:#fde8e8;color:var(--critical)">&#x25CF; Critical</span>
+                    <span class="mock-pill" style="background:#fde8e8;color:var(--critical);font-size:8px">&#9888; SLA Breached</span>
+                  </div>
+                </div>
+                <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:10px">
+                  <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px">Description</div>
+                  <div style="font-size:10px;color:var(--muted);line-height:1.5">Finance server disk at 98%. File server unavailable for 3 users. RAID alert triggered at 09:10.</div>
+                </div>
+                <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:10px">
+                  <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px">Action Log</div>
+                  <div style="display:flex;flex-direction:column;gap:5px">
+                    <div style="font-size:10px;border-left:2px solid var(--green);padding-left:8px;color:var(--muted)">09:14 &#8212; Ticket assigned to Budi S.</div>
+                    <div style="font-size:10px;border-left:2px solid var(--medium);padding-left:8px;color:var(--muted)">09:22 &#8212; Technician acknowledged. Running disk check.</div>
+                    <div style="font-size:10px;border-left:2px solid var(--high);padding-left:8px;color:var(--muted)">10:05 &#8212; Archive folder moved to NAS. 47 GB freed.</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:6px">
+                  <div style="height:22px;flex:1;background:var(--green);border-radius:4px;opacity:.4"></div>
+                  <div style="height:22px;width:70px;background:#f0f0ec;border-radius:4px;border:1px solid var(--line)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asset Inventory -->
+          <div class="preview-card">
+            <div class="preview-label">Asset Inventory <span class="preview-badge">Admin View</span></div>
+            <div class="preview-body">
+              <div class="mock-topbar"><span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span><span>IT Assets &#8212; Inventory</span></div>
+              <div class="mock-screen">
+                <div style="display:flex;gap:6px;align-items:center">
+                  <div style="height:20px;flex:1;background:#fff;border:1px solid var(--line);border-radius:4px"></div>
+                  <div style="height:20px;width:50px;background:var(--green);border-radius:4px;opacity:.5"></div>
+                  <div style="font-size:9px;color:var(--muted)">47 assets</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px">
+                  <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:8px">
+                    <div style="font-size:16px;margin-bottom:4px">&#x1F4BB;</div>
+                    <div style="font-size:9px;font-weight:700">ThinkPad E14</div>
+                    <div style="font-size:8px;color:var(--muted)">AST-0014</div>
+                    <div style="height:1px;background:var(--line);margin:5px 0"></div>
+                    <div style="font-size:8px;color:var(--muted)">Finance Dept.</div>
+                    <span class="mock-pill" style="background:var(--sp-prog-bg);color:var(--sp-prog-c);margin-top:4px;display:inline-block">Assigned</span>
+                  </div>
+                  <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:8px">
+                    <div style="font-size:16px;margin-bottom:4px">&#x1F5A8;&#xFE0F;</div>
+                    <div style="font-size:9px;font-weight:700">HP LaserJet M404</div>
+                    <div style="font-size:8px;color:var(--muted)">AST-0028</div>
+                    <div style="height:1px;background:var(--line);margin:5px 0"></div>
+                    <div style="font-size:8px;color:var(--muted)">HR Dept.</div>
+                    <span class="mock-pill" style="background:#fff3e0;color:#c47a00;margin-top:4px;display:inline-block">Maintenance</span>
+                  </div>
+                  <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:8px">
+                    <div style="font-size:16px;margin-bottom:4px">&#x1F310;</div>
+                    <div style="font-size:9px;font-weight:700">Cisco RV345P</div>
+                    <div style="font-size:8px;color:var(--muted)">AST-0007</div>
+                    <div style="height:1px;background:var(--line);margin:5px 0"></div>
+                    <div style="font-size:8px;color:var(--muted)">Server Room</div>
+                    <span class="mock-pill" style="background:var(--sp-prog-bg);color:var(--sp-prog-c);margin-top:4px;display:inline-block">Assigned</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Maintenance Records -->
+          <div class="preview-card">
+            <div class="preview-label">Maintenance Records <span class="preview-badge">Technician View</span></div>
+            <div class="preview-body">
+              <div class="mock-topbar"><span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span><span>Maintenance &#8212; Records</span></div>
+              <div class="mock-screen">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:4px">
+                  <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:8px;text-align:center">
+                    <div style="font:700 18px Georgia,serif;color:var(--medium)">12</div>
+                    <div style="font-size:9px;color:var(--muted)">Scheduled</div>
+                  </div>
+                  <div style="background:#fff;border-radius:6px;border:1px solid var(--line);padding:8px;text-align:center">
+                    <div style="font:700 18px Georgia,serif;color:var(--low)">31</div>
+                    <div style="font-size:9px;color:var(--muted)">Completed (MTD)</div>
+                  </div>
+                </div>
+                <div class="mock-tbl-wrap">
+                  <div style="background:#f8faf9;border-bottom:1px solid var(--line);padding:5px 8px;display:grid;grid-template-columns:60px 1fr 50px 50px;gap:4px">
+                    <span style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Date</span>
+                    <span style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Asset</span>
+                    <span style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Type</span>
+                    <span style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)">Result</span>
+                  </div>
+                  <div style="padding:5px 8px;border-bottom:1px solid #f0f0ec;display:grid;grid-template-columns:60px 1fr 50px 50px;gap:4px;align-items:center">
+                    <span style="font-size:9px;color:var(--muted)">Oct 3</span>
+                    <span style="font-size:9px">HP LaserJet M404</span>
+                    <span class="mock-pill" style="background:#e8f2fc;color:var(--medium);font-size:7px">Corrective</span>
+                    <span class="mock-pill" style="background:#fff3e0;color:#c47a00;font-size:7px">Pending</span>
+                  </div>
+                  <div style="padding:5px 8px;border-bottom:1px solid #f0f0ec;display:grid;grid-template-columns:60px 1fr 50px 50px;gap:4px;align-items:center">
+                    <span style="font-size:9px;color:var(--muted)">Oct 1</span>
+                    <span style="font-size:9px">Dell OptiPlex 7090</span>
+                    <span class="mock-pill" style="background:var(--sp-res-bg);color:var(--sp-res-c);font-size:7px">Preventive</span>
+                    <span class="mock-pill" style="background:var(--sp-res-bg);color:var(--sp-res-c);font-size:7px">Done</span>
+                  </div>
+                  <div style="padding:5px 8px;display:grid;grid-template-columns:60px 1fr 50px 50px;gap:4px;align-items:center">
+                    <span style="font-size:9px;color:var(--muted)">Sep 28</span>
+                    <span style="font-size:9px">Hikvision CCTV</span>
+                    <span class="mock-pill" style="background:#e8f2fc;color:var(--medium);font-size:7px">Corrective</span>
+                    <span class="mock-pill" style="background:#fde8e8;color:var(--critical);font-size:7px">Failed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 05 Testing & Results ── -->
+<section class="cs-section">
+  <div class="wrap">
+    <div class="cs-header">
+      <div class="cs-sticky">
+        <div class="cs-num">05</div>
+        <h2 class="cs-title">Testing &amp; Results</h2>
+        <p class="cs-lead">Test scenarios, actual results, and identified system limitations.</p>
+      </div>
+      <div>
+
+        <div class="test-grid">
+          <div class="test-card">
+            <div class="test-card-head">
+              <h4>Ticket Submission &amp; Tracking</h4>
+              <span class="test-result-badge pass">&#10003; Pass</span>
+            </div>
+            <table class="test-table">
+              <thead>
+                <tr><th>Scenario</th><th>Expected</th><th>Result</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Submit ticket with all required fields</td>
+                  <td>Ticket created with unique ID &amp; Open status</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Submit ticket missing priority field</td>
+                  <td>Validation error — form not submitted</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Technician updates ticket to In Progress</td>
+                  <td>Status changes, timestamp recorded, reporter notified</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Mark ticket as Resolved</td>
+                  <td>SLA compliance calculated, resolution time logged</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="test-card">
+            <div class="test-card-head">
+              <h4>SLA Enforcement</h4>
+              <span class="test-result-badge pass">&#10003; Pass</span>
+            </div>
+            <table class="test-table">
+              <thead>
+                <tr><th>Scenario</th><th>Expected</th><th>Result</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Critical ticket resolved within 4 hours</td>
+                  <td>SLA status: Met &#8226; Green indicator</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>High ticket unresolved after 8 hours</td>
+                  <td>SLA status: Breached &#8226; Red indicator &#8226; Escalation triggered</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>SLA compliance rate on dashboard</td>
+                  <td>Accurate percentage shown in donut chart</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Auto-escalation notification</td>
+                  <td>Alert message generated for IT Lead</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="test-card">
+            <div class="test-card-head">
+              <h4>Asset Management</h4>
+              <span class="test-result-badge pass">&#10003; Pass</span>
+            </div>
+            <table class="test-table">
+              <thead>
+                <tr><th>Scenario</th><th>Expected</th><th>Result</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Register new asset with full data</td>
+                  <td>Asset saved with unique code and Available status</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Assign asset to a user</td>
+                  <td>Status changes to Assigned &#8226; Assignment history recorded</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Log maintenance for an asset</td>
+                  <td>Record saved under asset &#8226; Status changes to Maintenance</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Retire an end-of-life asset</td>
+                  <td>Status = Retired &#8226; Asset removed from active inventory</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="test-card">
+            <div class="test-card-head">
+              <h4>Role-Based Access Control</h4>
+              <span class="test-result-badge pass">&#10003; Pass</span>
+            </div>
+            <table class="test-table">
+              <thead>
+                <tr><th>Scenario</th><th>Expected</th><th>Result</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Employee accesses admin dashboard</td>
+                  <td>Access denied &#8212; redirect to own ticket list</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Technician attempts to delete ticket</td>
+                  <td>Delete button not visible — action blocked</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Admin assigns technician to ticket</td>
+                  <td>Assignment saved &#8226; Technician receives notification</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+                <tr>
+                  <td>Guest user accesses the system</td>
+                  <td>Redirect to login page</td>
+                  <td class="stat-pass">&#10003; Pass</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="result-summary">
+          <div class="rs-card">
+            <span class="rs-val green">16/16</span>
+            <span class="rs-label">Test scenarios passed</span>
+          </div>
+          <div class="rs-card">
+            <span class="rs-val green">100%</span>
+            <span class="rs-label">Pass rate (prototype stage)</span>
+          </div>
+          <div class="rs-card">
+            <span class="rs-val orange">4</span>
+            <span class="rs-label">Known limitations identified</span>
+          </div>
+        </div>
+
+        <!-- Limitations -->
+        <div class="limitation-list">
+          <div class="limit-item">
+            <div>
+              <strong style="display:block;color:var(--ink);font-weight:700;margin-bottom:2px;font-size:13px;">Frontend-only prototype</strong>
+              <span style="font-size:12px;">Current version is a static HTML/CSS/JS simulation. Full backend (Laravel + MySQL) is planned but not yet implemented.</span>
+            </div>
+          </div>
+          <div class="limit-item">
+            <div>
+              <strong style="display:block;color:var(--ink);font-weight:700;margin-bottom:2px;font-size:13px;">No real-time notifications</strong>
+              <span style="font-size:12px;">Email/push notifications for SLA breach and technician assignment are designed but not yet integrated in the prototype.</span>
+            </div>
+          </div>
+          <div class="limit-item">
+            <div>
+              <strong style="display:block;color:var(--ink);font-weight:700;margin-bottom:2px;font-size:13px;">No file attachment handling</strong>
+              <span style="font-size:12px;">The UI supports attachment upload fields, but file storage backend logic is pending implementation.</span>
+            </div>
+          </div>
+          <div class="limit-item">
+            <div>
+              <strong style="display:block;color:var(--ink);font-weight:700;margin-bottom:2px;font-size:13px;">Simulated data only</strong>
+              <span style="font-size:12px;">All ticket and asset data shown in the prototype is pre-defined. Live database integration is planned for v2.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact CTA ── -->
+<div class="wrap">
+  <div class="cs-contact">
+    <div>
+      <div class="kicker">Get in touch</div>
+      <h2>Let's build something useful.</h2>
+      <p>Open to opportunities in Business Analysis, Project Coordination, IT &amp; Business Operations, and Application Support.</p>
+    </div>
+    <div class="buttons">
+      <a class="btn primary" href="mailto:annisarara100@gmail.com" style="background:#fff;color:var(--green);border-color:#fff;">Email Me</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/annisa-fazhira-390906249/" target="_blank" style="border-color:#fff;color:#fff;">LinkedIn &#8599;</a>
+      <a class="btn secondary" href="index.html" style="border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.8);">&#8592; Portfolio</a>
+    </div>
+  </div>
+</div>
+
+<footer class="wrap" style="padding:28px 0;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:0">
+  <span>&#169; 2026 Annisa Fazhira</span>
+  <span>IT Helpdesk &amp; Asset Management System &#8212; Case Study</span>
+</footer>
+
+<script>
+function switchDiagram(el, id) {
+  document.querySelectorAll('.dtab').forEach(function(t){t.classList.remove('active')});
+  document.querySelectorAll('.diagram-panel').forEach(function(p){p.classList.remove('active')});
+  el.classList.add('active');
+  document.getElementById('diag-'+id).classList.add('active');
+}
+</script>
+</body>
+</html>

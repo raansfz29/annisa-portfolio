@@ -1,170 +1,1492 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Annisa Fazhira — Business Analysis, Project Coordination, IT & Business Operations">
-<title>Annisa Fazhira | Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Annisa Fazhira — Project Management & Information Systems Portfolio. End-to-end delivery, business analysis, GIS, IT support, leadership, and operational control.">
+  <title>Annisa Fazhira | Project Management & Information Systems</title>
+  
+  <!-- Favicon / Web Icon -->
+  <link rel="icon" type="image/png" href="images/annisa-hero-cutout.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Caveat, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav><div class="wrap nav"><a class="logo" href="#home">Annisa Fazhira<b>.</b></a><div class="links"><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><a href="Annisa_Fazhira_CV.pdf" target="_blank" style="color:var(--green);font-weight:600">CV</a></div></div></nav>
 
-<header class="hero" id="home"><div class="wrap heroGrid">
-<div><div class="eyebrow">Information Systems Graduate</div><h1>Turning problems into <em>practical solutions.</em></h1><p class="lead">Business analysis, project coordination, and IT & business operations — combining structured thinking, technology, and collaboration to deliver useful outcomes.</p><div class="buttons"><a class="btn primary" href="#work">View My Work ↗</a><a class="btn secondary" href="Annisa_Fazhira_CV.pdf" target="_blank">Download CV</a><a class="btn secondary" href="mailto:annisarara100@gmail.com">Email Me</a></div></div>
-<div class="heroCard"><div class="window"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div><img src="images/peta-rajabasa.jpg" alt="Peta Study Area Rajabasa" style="width:100%; height:350px; object-fit:contain; background:#fff; display:block;"></div></div><div class="stats"><div class="stat"><strong>3.76</strong><small>GPA / 4.00</small></div><div class="stat"><strong>98%</strong><small>Expert validation</small></div><div class="stat"><strong>87.80</strong><small>SUS score</small></div></div></div>
-</div></header>
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-nav" id="topNav">
+    <div class="wrap nav-container">
+      <a href="#hero" class="brand-logo">
+        Annisa Fazhira<span class="dot">.</span>
+        <span class="brand-badge">S.Kom</span>
+      </a>
 
-<section id="about"><div class="wrap"><div class="head"><div><div class="kicker">01 — About</div><h2>A structured mind with a practical approach.</h2></div><p class="intro">A fresh Information Systems graduate focused on understanding problems, structuring requirements, coordinating execution, and supporting technology-driven work.</p></div>
-<div class="about" style="grid-template-columns: 320px 1fr; align-items: start;">
-    <div>
-        <img src="images/profile-1.jpg" alt="Annisa Fazhira" style="width:100%; border-radius:24px; object-fit:cover; aspect-ratio:3/4; border:1px solid var(--line); box-shadow:0 22px 50px #20352b12;">
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#strengths">Strengths &amp; Skills</a>
+        <a href="#agrimap">AgrimapGIS</a>
+        <a href="#itsupport">IT Support</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#retail">Retail Digitalization</a>
+        <a href="#projects">Other Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-sm btn-secondary" id="openDeckBtn" title="View 17-slide deck">
+          <i class="fa-solid fa-layer-group"></i> Slides
+        </button>
+        <a href="CV_Annisa_Fazhira.pdf" target="_blank" download class="btn btn-sm btn-gold" title="Download Curriculum Vitae (PDF)">
+          <i class="fa-solid fa-file-lines"></i> CV
+        </a>
+        <a href="Portofolio_Annisa_Fazhira.pdf" target="_blank" download class="btn btn-sm btn-primary" title="Download PDF Portfolio">
+          <i class="fa-solid fa-file-pdf"></i> Deck
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
-    <div>
-        <div class="aboutQuote" style="margin-bottom: 24px;">I connect <span style="color:var(--green)">people, processes, and technology</span> to turn ideas into workable solutions.</div>
-        <p class="muted">I hold a Bachelor of Technology in Information Systems from UIN Raden Intan Lampung with a 3.76/4.00 GPA. My experience spans an end-to-end technology project, IT support, administrative operations, stakeholder coordination, and regional organizational leadership.</p>
-        <p class="muted">Currently open to opportunities in Business Analysis, Project Coordination, PMO, IT & Business Operations, Application Support, and Technology Consulting.</p>
-        <div class="metrics"><div class="metric"><b>150+</b><span class="muted">documents managed</span></div><div class="metric"><b>98%</b><span class="muted">expert validation</span></div><div class="metric"><b>87.80</b><span class="muted">SUS — Grade A</span></div></div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (Faithfully matching Slide 1 of the deck)
+       ========================================================================== -->
+  <section class="hero-deck" id="hero">
+    <div class="wrap">
+      
+      <!-- Slide 1 Top Bar -->
+      <div class="hero-deck-header">
+        <div class="hero-deck-tag">
+          PROJECT MANAGEMENT &amp; INFORMATION SYSTEMS
+        </div>
+        <div class="hero-deck-year">2026</div>
+      </div>
+
+      <!-- Main Stage with Giant "Portfolio." + Photo Cutout -->
+      <div class="hero-main-stage">
+        
+        <!-- Giant Typography Background -->
+        <div class="hero-giant-title">Portfolio.</div>
+        
+        <!-- Annisa Cutout Photo (Slide 1 & 17) -->
+        <div class="hero-avatar-wrapper">
+          <img src="images/annisa-hero-cutout.png" alt="Annisa Fazhira - Project Management &amp; Information Systems" class="hero-avatar-img">
+        </div>
+
+        <!-- Layered Outline Typography in Front of Cutout -->
+        <div class="hero-giant-outline">Portfolio.</div>
+
+        <!-- Name & Gold Badge -->
+        <div class="hero-identity">
+          <h1>Annisa Fazhira</h1>
+          <div class="hero-gold-banner">
+            Project Management | Business Development Support
+          </div>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div class="hero-action-bar">
+          <a href="#agrimap" class="btn btn-gold btn-lg">
+            <i class="fa-solid fa-diagram-project"></i> Explore Case Studies
+          </a>
+          <button class="btn btn-ghost-white btn-lg" id="heroOpenDeckBtn">
+            <i class="fa-regular fa-images"></i> Browse Slide Deck (17 Slides)
+          </button>
+          <a href="CV_Annisa_Fazhira.pdf" download class="btn btn-ghost-white btn-lg">
+            <i class="fa-solid fa-file-lines"></i> Download CV (PDF)
+          </a>
+        </div>
+
+        <!-- Slide 1 Corner Navigation Indicator -->
+        <div class="hero-corner-cta">
+          <a href="#about" class="btn-arrow-box" title="Scroll to About Me">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
     </div>
-</div></div></section>
+  </section>
 
-<section id="work"><div class="wrap"><div class="head"><div><div class="kicker">02 — Selected Work</div><h2>Work that shows how I think.</h2></div><p class="intro">Case-study style projects demonstrating analysis, execution, documentation, and problem solving.</p></div>
-<div class="projects">
+  <!-- ==========================================================================
+       DECK VIEWER INTERACTIVE STRIP
+       ========================================================================== -->
+  <div class="deck-viewer-section">
+    <div class="wrap deck-viewer-wrap">
+      <div class="deck-info">
+        <div class="deck-icon-badge">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div>
+          <div class="deck-title">Interactive Portfolio Deck · 17 Comprehensive Slides</div>
+          <div class="deck-desc">Browse the complete executive presentation deck directly on this website, or download as PDF.</div>
+        </div>
+      </div>
+      <div class="deck-actions">
+        <button class="btn btn-sm btn-gold" id="stripOpenDeckBtn">
+          <i class="fa-solid fa-expand"></i> Launch Slide Viewer
+        </button>
+        <a href="Portofolio_Annisa_Fazhira.pdf" download class="btn btn-sm btn-secondary">
+          <i class="fa-solid fa-download"></i> Download PDF (6.8 MB)
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <!-- Project 1 (Featured) -->
-    <a href="https://agrimapgis.infinityfreeapp.com/" target="_blank" class="project featured">
-        <div class="projectVisual" style="background:#e8eee9">
-            <img src="images/agrimap-gis-real.png" alt="AgrimapGIS" class="project-img" style="object-position: top;">
-        </div>
-        <div class="projectInfo">
-            <div class="num">01 / FEATURED PROJECT</div>
-            <h3>AgrimapGIS</h3>
-            <p>Web-based Geographic Information System for agricultural activity monitoring, developed for the Bandar Lampung City Agriculture Office as an undergraduate thesis project. Managed from proposal through completion, including requirements gathering, analysis and design, documentation, stakeholder validation, and delivery.</p>
-            <div class="tags"><span class="tag">Requirements Gathering</span><span class="tag">System Analysis</span><span class="tag">Project Management</span><span class="tag">GIS</span><span class="tag">Validation</span></div>
-        </div>
-    </a>
+  <!-- ==========================================================================
+       SECTION 1: ABOUT ME / TENTANG SAYA (Slide 2)
+       ========================================================================== -->
+  <section id="about">
+    <div class="wrap">
+      
+      <div class="about-grid">
+        
+        <!-- Left: Text, Stats, Education & Contact -->
+        <div>
+          <div class="script-title-wrapper">
+            <span class="script-title">Tentang Saya</span>
+            <h2 class="section-title">About Me</h2>
+          </div>
 
-    <!-- Project 2 -->
-    <a href="https://drive.google.com/file/d/1aQwjPcT-kRmd4XB_tQDW4Mh9Vxc5gHzn/view?usp=sharing" target="_blank" class="project">
-        <div class="projectVisual" style="background:#e9f0f6">
-            <img src="images/ridecamp-real.png" alt="RideCamp" class="project-img" style="object-fit: contain; border: none; border-radius: 0;">
-        </div>
-        <div class="projectInfo">
-            <div class="num">02 / PRODUCT DESIGN</div>
-            <h3>RideCamp</h3>
-            <p>Multi-Service Ride Hailing Mobile Application concept covering UI/UX design, flow architecture, and product logic.</p>
-            <div class="tags"><span class="tag">Product Design</span><span class="tag">UI/UX</span><span class="tag">System Design</span></div>
-        </div>
-    </a>
+          <p class="about-main-text">
+            Information Systems graduate (<strong>S.Kom., Cum Laude, GPA 3.76/4.00</strong>) who delivers projects end to end. Led <strong>AgrimapGIS</strong>, a copyright-registered web GIS for the Bandar Lampung City Agriculture Office, from requirements to deployment, and keeps teams and stakeholders aligned through structured documentation and clear follow-up.
+          </p>
 
-    <!-- Project 3 -->
-    <a href="https://drive.google.com/file/d/1Zp5wV3AxLWJIm4S9955tljxaqPdtN5Ng/view?usp=sharing" target="_blank" class="project">
-        <div class="projectVisual" style="background:#edf2e8">
-            <img src="images/lingosphere-real.png" alt="Lingosphere" class="project-img" style="object-fit: contain; border: none; border-radius: 0;">
-        </div>
-        <div class="projectInfo">
-            <div class="num">03 / PRODUCT DESIGN</div>
-            <h3>Lingosphere</h3>
-            <p>English Learning Mobile Application integrating gamification elements to drive user engagement and learning retention.</p>
-            <div class="tags"><span class="tag">Product Design</span><span class="tag">Gamification</span><span class="tag">UI/UX</span></div>
-        </div>
-    </a>
+          <p class="about-main-text" style="color:var(--ink-muted); font-size:15px;">
+            As <strong>Regional Coordinator of PERMIKOMNAS Region XV Lampung</strong>, aligned 11 student associations across 10 campuses and brought in 2 new member associations. Brings retail operations experience from a family minimarket and turns operational needs into structured processes and digital solutions.
+          </p>
 
-    <!-- Project 4 (Featured) -->
-    <a href="http://localhost/sweet%20temptations%20bakery/" target="_blank" class="project featured">
-        <div class="projectVisual" style="background:#faefe8">
-            <img src="images/naras-cake-real.png" alt="Nara's Cake" class="project-img" style="object-position: top;">
-        </div>
-        <div class="projectInfo">
-            <div class="num">04 / RESPONSIVE WEB</div>
-            <h3>Nara's Cake</h3>
-            <p>A beautifully designed, responsive bakery business website featuring product catalogs, order flows, and a modern frontend interface designed to capture the brand's aesthetic.</p>
-            <div class="tags"><span class="tag">Web Development</span><span class="tag">UI Design</span><span class="tag">Business</span></div>
-        </div>
-    </a>
-
-    <!-- Project 5 -->
-    <a href="images/smart-green-campus.png" target="_blank" class="project">
-        <div class="projectVisual" style="background:#eef6ee">
-            <img src="images/smart-green-campus.png" alt="Smart-Green Campus" class="project-img" style="object-fit: contain; background: #fff; border: none;">
-        </div>
-        <div class="projectInfo">
-            <div class="num">05 / SPATIAL ANALYSIS</div>
-            <h3>Smart-Green Campus</h3>
-            <p>Thematic spatial mapping of UIN RIL focusing on green spaces, accessibility, and risk mitigation using GIS software.</p>
-            <div class="tags"><span class="tag">GIS</span><span class="tag">Spatial Analysis</span><span class="tag">Data Viz</span></div>
-        </div>
-    </a>
-
-    <!-- Project 6 (From original code) -->
-    <div class="project">
-        <div class="projectVisual" style="background:#e9e6dc">
-            <div class="mock">
-                <div class="mockHead"><span>IT SUPPORT</span><span>ISSUE FLOW</span></div>
-                <div style="padding:22px;text-align:center"><span class="tag">REPORTED ISSUE</span><div style="color:var(--green)">↓</div><span class="tag">DIAGNOSIS</span><div style="color:var(--green)">↓</div><span class="tag">TROUBLESHOOT</span><div style="color:var(--green)">↓</div><span class="tag">DOCUMENTATION</span></div>
+          <!-- 4 Key Stat Cards (Slide 2) -->
+          <div class="about-stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">11</div>
+              <div class="stat-label">associations coordinated across 10 campuses</div>
             </div>
+            <div class="stat-card">
+              <div class="stat-number">87.80</div>
+              <div class="stat-label">SUS usability score (Grade A)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">expert validation, AgrimapGIS</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">150+</div>
+              <div class="stat-label">organizational documents archived</div>
+            </div>
+          </div>
+
+          <!-- Education & Contact split row (Slide 2) -->
+          <div class="about-split-bottom">
+            
+            <!-- Education -->
+            <div class="edu-box">
+              <div class="edu-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+              
+              <div class="edu-item">
+                <img src="images/logo-uin.png" alt="UIN Raden Intan Lampung" class="edu-logo">
+                <div>
+                  <div class="edu-inst">UIN Raden Intan Lampung</div>
+                  <div class="edu-deg">B.Comp.Sc. Information Systems · 2022 – 2026</div>
+                  <div class="edu-score">GPA 3.76 / 4.00, Cum Laude</div>
+                </div>
+              </div>
+
+              <div class="edu-item">
+                <img src="images/logo-sman1.png" alt="SMAN 1 Payakumbuh" class="edu-logo">
+                <div>
+                  <div class="edu-inst">SMAN 1 Payakumbuh</div>
+                  <div class="edu-deg">Science Major · 2019 – 2022</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="contact-card-box">
+              <div class="contact-card-title"><i class="fa-regular fa-address-card"></i> Contact Information</div>
+              <div class="contact-links-list">
+                <div class="contact-link-row">
+                  <i class="fa-regular fa-envelope"></i>
+                  <a href="mailto:annisarara100@gmail.com">annisarara100@gmail.com</a>
+                </div>
+                <div class="contact-link-row">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <a href="https://wa.me/6289534708703" target="_blank">+62 895-3470-8703</a>
+                </div>
+                <div class="contact-link-row">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <a href="https://linkedin.com/in/annisa-fazhira-390906249" target="_blank">linkedin.com/in/annisa-fazhira</a>
+                </div>
+                <div class="contact-link-row">
+                  <i class="fa-brands fa-github"></i>
+                  <a href="https://github.com/raansfz29" target="_blank">github.com/raansfz29</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-        <div class="projectInfo">
-            <div class="num">06 / EXPERIENCE CASE</div>
-            <h3>IT Support</h3>
-            <p>Structured troubleshooting, hardware/software support, documentation, and communication with non-technical users.</p>
-            <div class="tags"><span class="tag">IT Support</span><span class="tag">Troubleshooting</span><span class="tag">Documentation</span></div>
+
+        <!-- Right: Photo in Graduation Sash (Slide 2) -->
+        <div>
+          <div class="about-photo-card">
+            <img src="images/profile-1.jpg" alt="Annisa Fazhira, S.Kom. Graduation" class="lightbox-trigger" data-caption="Annisa Fazhira, S.Kom. — Cum Laude Graduate in Information Systems (UIN Raden Intan Lampung)">
+            <div class="about-photo-caption">
+              <div>
+                <div class="about-photo-name">Annisa Fazhira, S.Kom.</div>
+                <small style="color:var(--ink-muted);font-size:12px;">Bachelor of Computer Science</small>
+              </div>
+              <span class="about-photo-tag"><i class="fa-solid fa-award"></i> Cum Laude (3.76)</span>
+            </div>
+          </div>
         </div>
+
+      </div>
+
     </div>
+  </section>
 
-</div></div></section>
+  <!-- ==========================================================================
+       SECTION 2: CORE STRENGTHS & TECHNICAL SKILLS (Slide 3)
+       ========================================================================== -->
+  <section id="strengths" style="background:#eef6f6; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      
+      <!-- Core Strengths Banner (Slide 3 Top) -->
+      <div class="strengths-banner">
+        <div class="strengths-head">
+          <div class="pill-badge pill-gold" style="margin-bottom:12px;">Executive Capabilities</div>
+          <h2>Core Strengths</h2>
+        </div>
 
-<section><div class="wrap"><div class="head"><div><div class="kicker">03 — Approach</div><h2>How I work.</h2></div><p class="intro">A simple framework for moving from ambiguity to a clear, actionable outcome.</p></div><div class="process">
-<div class="step"><b>01</b><h3>Understand</h3><p>Identify the problem, users, context, and desired outcome.</p></div><div class="step"><b>02</b><h3>Analyze</h3><p>Structure requirements, processes, issues, and available information.</p></div><div class="step"><b>03</b><h3>Coordinate</h3><p>Align people, tasks, documentation, and execution.</p></div><div class="step"><b>04</b><h3>Deliver</h3><p>Translate analysis into a practical and usable solution.</p></div><div class="step"><b>05</b><h3>Evaluate</h3><p>Validate outcomes and identify opportunities for improvement.</p></div>
-</div></div></section>
+        <div class="strengths-grid">
+          
+          <div class="strength-card">
+            <div>
+              <h3>End-to-End Project Management</h3>
+              <p>Manages the full cycle from needs identification and scope to planning, development, implementation, and evaluation.</p>
+            </div>
+            <div class="strength-tag">AgrimapGIS: proposal to deployment</div>
+          </div>
 
-<section id="experience"><div class="wrap"><div class="head"><div><div class="kicker">04 — Experience</div><h2>Experience beyond the job title.</h2></div><p class="intro">Leadership and operational experience that strengthened coordination, documentation, communication, and ownership.</p></div>
-<div class="timeline">
-<div class="item"><div class="date">AUG 2025 — PRESENT · PERMIKOMNAS REGION XV LAMPUNG</div><h3>Regional Coordinator</h3><p>Led and coordinated regional work programs, teams, resources, strategic planning, execution, and internal/external stakeholder communication.</p></div>
-<div class="item"><div class="date">APR 2025 — AUG 2025 · PERMIKOMNAS REGION XV LAMPUNG</div><h3>Regional Secretary</h3><p>Managed organizational administration, delegation processes, correspondence, cooperation proposals, documentation, and stakeholder coordination.</p></div>
-<div class="item"><div class="date">JUN 2024 — JUN 2025 · HIMASI</div><h3>Secretary General</h3><p>Managed and archived 150+ administrative and operational documents, prepared meeting minutes, and coordinated administrative follow-up.</p></div>
-<div class="item"><div class="date">JAN 2025 — MAR 2025 · PENGADILAN AGAMA TANJUNG PATI KELAS IB</div><h3>IT Support Intern</h3><p>Provided operational IT support, diagnosed hardware/software/network issues, maintained systems, documented troubleshooting, and communicated solutions to non-technical staff.</p></div>
-</div></div></section>
+          <div class="strength-card">
+            <div>
+              <h3>System &amp; Business Analysis</h3>
+              <p>Turns user needs into digital solutions through process analysis, requirements gathering, UML modeling, and database design.</p>
+            </div>
+            <div class="strength-tag">Use Case · Activity · Class · MySQL Spatial</div>
+          </div>
 
-<section id="skills"><div class="wrap"><div class="head"><div><div class="kicker">05 — Skills</div><h2>What I bring to a team.</h2></div></div><div class="skills">
-<div class="skill"><h3>Business Analysis</h3><p>Requirements Gathering<br>System Analysis & Design<br>Process Mapping<br>Process Improvement<br>Documentation</p></div>
-<div class="skill"><h3>Project & Operations</h3><p>Project Coordination<br>Project Management<br>Stakeholder Management<br>Strategic Planning<br>Team Coordination</p></div>
-<div class="skill"><h3>Technical</h3><p>IT Support<br>Structured Troubleshooting<br>Data Management<br>Geographic Information Systems</p></div>
-<div class="skill"><h3>Tools</h3><p>Microsoft Office<br>Google Workspace<br>Notion<br>Figma<br>AutoCAD</p></div>
-</div></div></section>
+          <div class="strength-card">
+            <div>
+              <h3>Stakeholder &amp; Partnerships</h3>
+              <p>Aligns teams and stakeholders, clarifies responsibilities, and makes sure follow-ups run as agreed.</p>
+            </div>
+            <div class="strength-tag">11 associations · 8 regional programs</div>
+          </div>
 
-<section id="gallery"><div class="wrap"><div class="head"><div><div class="kicker">06 — Gallery</div><h2>Moments & Activities.</h2></div><p class="intro">A glimpse into my organizational activities, teamwork, and graduation moments.</p></div>
-<div class="gallery-grid">
-    <img src="images/gallery-1.jpg" alt="Gallery 1">
-    <img src="images/gallery-2.jpg" alt="Gallery 2">
-    <img src="images/gallery-3.jpg" alt="Gallery 3">
-    <img src="images/gallery-4.jpg" alt="Gallery 4">
-    <img src="images/gallery-5.jpg" alt="Gallery 5">
-    <img src="images/gallery-6.jpg" alt="Gallery 6">
-    <img src="images/gallery-7.jpg" alt="Gallery 7">
-    <img src="images/gallery-8.jpg" alt="Gallery 8">
-    <img src="images/gallery-9.jpg" alt="Gallery 9">
-    <img src="images/gallery-10.jpg" alt="Gallery 10">
-    <img src="images/gallery-11.jpg" alt="Gallery 11">
-    <img src="images/gallery-12.jpg" alt="Gallery 12">
-    <img src="images/gallery-13.jpg" alt="Gallery 13">
-    <img src="images/gallery-14.jpg" alt="Gallery 14">
-    <img src="images/gallery-15.jpg" alt="Gallery 15">
-    <img src="images/gallery-16.jpg" alt="Gallery 16">
-    <img src="images/gallery-17.jpg" alt="Gallery 17">
-    <img src="images/gallery-18.jpg" alt="Gallery 18">
-    <img src="images/gallery-19.jpg" alt="Gallery 19">
-    <img src="images/gallery-20.jpg" alt="Gallery 20">
-    <img src="images/gallery-21.jpg" alt="Gallery 21">
-    <img src="images/gallery-22.jpg" alt="Gallery 22">
-    <img src="images/gallery-23.jpg" alt="Gallery 23">
-    <img src="images/gallery-24.jpg" alt="Gallery 24">
-    <img src="images/gallery-25.jpg" alt="Gallery 25">
-    <img src="images/gallery-26.jpg" alt="Gallery 26">
-</div>
-</div></section>
+          <div class="strength-card">
+            <div>
+              <h3>Administration &amp; Project Control</h3>
+              <p>Maintains project documentation, minutes, digital archives, progress tracking, and decision records.</p>
+            </div>
+            <div class="strength-tag">150+ documents archived</div>
+          </div>
 
-<section id="contact"><div class="wrap"><div class="contact"><div><div class="kicker">07 — Contact</div><h2>Let's build something useful.</h2><p>Open to opportunities in Business Analysis, Project Coordination, PMO, IT & Business Operations, Application Support, and Technology Consulting.</p></div><div class="buttons"><a class="btn primary" href="mailto:annisarara100@gmail.com">Email Me</a><a class="btn secondary" href="https://www.linkedin.com/in/annisa-fazhira-390906249/" target="_blank">LinkedIn ↗</a><a class="btn secondary" href="https://github.com/raansfz29" target="_blank" style="border-color:#fff; color:#fff;">GitHub ↗</a></div></div></div></section>
-<footer class="wrap"><span>© 2026 Annisa Fazhira</span><span class="foot2">Business Analysis · Project Coordination · IT & Operations</span></footer>
-</body></html>
+        </div>
+      </div>
+
+      <!-- Technical & Professional Skills 3-Column Layout (Slide 3 Bottom) -->
+      <div>
+        <h3 class="skills-head-title">Technical &amp; Professional Skills</h3>
+
+        <div class="skills-grid-3col">
+          
+          <!-- Column 1: PM & PMO -->
+          <div class="skill-col-card">
+            <div class="skill-col-header">
+              <div class="skill-col-icon"><i class="fa-solid fa-list-check"></i></div>
+              <div class="skill-col-title">Project Management &amp; PMO</div>
+            </div>
+            <ul class="skill-item-list">
+              <li><i class="fa-solid fa-circle-check"></i> Project planning &amp; scheduling</li>
+              <li><i class="fa-solid fa-circle-check"></i> Scope and requirements management</li>
+              <li><i class="fa-solid fa-circle-check"></i> Progress monitoring &amp; reporting</li>
+              <li><i class="fa-solid fa-circle-check"></i> Stakeholder coordination</li>
+              <li><i class="fa-solid fa-circle-check"></i> Waterfall &amp; Agile fundamentals</li>
+              <li><i class="fa-solid fa-circle-check"></i> Documentation and action tracking</li>
+            </ul>
+          </div>
+
+          <!-- Column 2: System Analysis & Development -->
+          <div class="skill-col-card">
+            <div class="skill-col-header">
+              <div class="skill-col-icon"><i class="fa-solid fa-code-branch"></i></div>
+              <div class="skill-col-title">System Analysis &amp; Development</div>
+            </div>
+            <ul class="skill-item-list">
+              <li><i class="fa-solid fa-circle-check"></i> Requirements gathering</li>
+              <li><i class="fa-solid fa-circle-check"></i> UML: Use Case, Activity, Class Diagram</li>
+              <li><i class="fa-solid fa-circle-check"></i> MySQL &amp; database management</li>
+              <li><i class="fa-solid fa-circle-check"></i> PHP &amp; CodeIgniter 4</li>
+              <li><i class="fa-solid fa-circle-check"></i> GIS: Leaflet.js &amp; Turf.js</li>
+              <li><i class="fa-solid fa-circle-check"></i> Spatial data management</li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Digital Tools & Visualization -->
+          <div class="skill-col-card">
+            <div class="skill-col-header">
+              <div class="skill-col-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <div class="skill-col-title">Digital Tools &amp; Visualization</div>
+            </div>
+            <ul class="skill-item-list">
+              <li><i class="fa-solid fa-circle-check"></i> Microsoft Office &amp; Google Workspace</li>
+              <li><i class="fa-solid fa-circle-check"></i> Microsoft Excel &amp; PowerPoint</li>
+              <li><i class="fa-solid fa-circle-check"></i> Figma &amp; UI/UX prototyping</li>
+              <li><i class="fa-solid fa-circle-check"></i> QGIS &amp; AutoCAD</li>
+              <li><i class="fa-solid fa-circle-check"></i> Notion &amp; digital documentation</li>
+              <li><i class="fa-solid fa-circle-check"></i> Process mapping &amp; data visualization</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: CASE STUDY 1 — AGRIMAPGIS (Slides 4, 5, 6)
+       ========================================================================== -->
+  <section id="agrimap">
+    <div class="wrap">
+      
+      <!-- Case Study Header Banner -->
+      <div class="case-study-badge-bar">
+        <span class="cs-tag-box">CASE STUDY 1</span>
+        <span class="cs-tag-category">PROJECT EXPERIENCE</span>
+      </div>
+
+      <h2 class="cs-title-giant">AGRIMAPGIS</h2>
+      <div class="cs-subtitle">Geographic Information System for Agricultural Activity Monitoring</div>
+
+      <div style="display:flex; gap:10px; margin-bottom:30px;">
+        <span class="pill-badge pill-teal"><i class="fa-solid fa-user-tie"></i> Project Lead</span>
+        <span class="pill-badge pill-blue"><i class="fa-regular fa-calendar"></i> Jan – Jul 2026</span>
+        <span class="pill-badge pill-gold"><i class="fa-solid fa-building-flag"></i> Bandar Lampung Agriculture Office</span>
+      </div>
+
+      <!-- Slide 4: The Project, Role, Capabilities & Mockup -->
+      <div class="cs-overview-grid">
+        
+        <!-- Left: Project Narrative & Role -->
+        <div class="cs-text-card">
+          <div class="cs-section-subhead">THE PROJECT</div>
+          <p class="cs-p">
+            A web GIS that lets agricultural activity be mapped, validated, and monitored on one platform. Built for the <strong>Bandar Lampung City Agriculture Office</strong>, with Rajabasa District as the focus area. <strong>Already in use by the agency.</strong>
+          </p>
+
+          <div class="cs-section-subhead">MY ROLE</div>
+          <ul class="cs-role-list">
+            <li>Owned the project lifecycle end to end: scope, requirements, design, development, deployment.</li>
+            <li>Translated client needs into 9 core features and a UML-based system design.</li>
+            <li>Ran rigorous validation (SUS usability, spatial accuracy test, expert appraisal) and handled national copyright registration and scientific journal publication.</li>
+          </ul>
+
+          <div class="cs-section-subhead">TECHNOLOGY STACK</div>
+          <div class="tech-pills-row">
+            <span class="tech-pill tp-ci">CodeIgniter 4</span>
+            <span class="tech-pill tp-mysql">MySQL 8.0 Spatial</span>
+            <span class="tech-pill tp-leaflet">Leaflet.js</span>
+            <span class="tech-pill tp-turf">Turf.js</span>
+            <span class="tech-pill tp-chart">Chart.js</span>
+            <span class="tech-pill tp-boot">Bootstrap 5</span>
+          </div>
+
+          <div class="cs-section-subhead" style="margin-top:20px;">KEY CAPABILITIES</div>
+          <div class="cs-capabilities-grid">
+            <div class="cs-cap-item">GPS-based land mapping</div>
+            <div class="cs-cap-item">KPI analytics dashboard</div>
+            <div class="cs-cap-item">Two-layer geofencing validation</div>
+            <div class="cs-cap-item">Dynamic thematic coloring</div>
+            <div class="cs-cap-item">Offline-first (PWA)</div>
+            <div class="cs-cap-item">Predictive harvest estimation</div>
+            <div class="cs-cap-item">Spatial buffer analysis</div>
+            <div class="cs-cap-item">Disaster risk mitigation</div>
+          </div>
+        </div>
+
+        <!-- Right: Real App Screenshot & Live Link -->
+        <div>
+          <div class="mockup-display">
+            <div class="mockup-head">
+              <div class="mockup-dots">
+                <span class="mockup-dot" style="background:#ef4444"></span>
+                <span class="mockup-dot" style="background:#f59e0b"></span>
+                <span class="mockup-dot" style="background:#10b981"></span>
+              </div>
+              <div class="mockup-url">https://agrimapgis.infinityfreeapp.com</div>
+              <a href="https://agrimapgis.infinityfreeapp.com/" target="_blank" class="btn btn-sm btn-primary" style="padding:4px 10px; font-size:11px;">
+                Open Live Demo ↗
+              </a>
+            </div>
+            <div class="mockup-body">
+              <img src="images/agrimap-gis-real.png" alt="AgrimapGIS Live Web App Interface" class="lightbox-trigger" data-caption="AgrimapGIS Landing Interface — Transformasi Pertanian dengan Data Presisi">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide 5: Waterfall Process & Deliverables -->
+      <div class="waterfall-card">
+        <div class="cs-section-subhead" style="text-align:center;">CASE STUDY 1 · PROCESS &amp; DELIVERABLES</div>
+        <div class="waterfall-subtitle">Waterfall delivery, from problem identification to publication</div>
+
+        <!-- 6 Step Pipeline -->
+        <div class="stepper-pipeline">
+          
+          <div class="step-card">
+            <div class="step-num-pill step-01">01</div>
+            <div class="step-title">Requirements</div>
+            <div class="step-desc">Problem identification, user needs, scope of the agricultural monitoring features.</div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num-pill step-02">02</div>
+            <div class="step-title">System Design</div>
+            <div class="step-desc">UML models (Use Case, Activity, Class) and MySQL spatial database schema.</div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num-pill step-03">03</div>
+            <div class="step-title">Development</div>
+            <div class="step-desc">CodeIgniter 4, Leaflet.js, Turf.js, Chart.js, Bootstrap 5, offline-first PWA.</div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num-pill step-04">04</div>
+            <div class="step-title">Testing &amp; Validation</div>
+            <div class="step-desc">SUS with 22 respondents, spatial accuracy test, expert validation.</div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num-pill step-05">05</div>
+            <div class="step-title">Deployment</div>
+            <div class="step-desc">Delivered for active operational use by the Bandar Lampung City Agriculture Office.</div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num-pill step-06">06</div>
+            <div class="step-title">Publication &amp; IP</div>
+            <div class="step-desc">Copyright No. 001266099; J-SIGN scientific article accepted (SINTA 4).</div>
+          </div>
+
+        </div>
+
+        <!-- What This Shows (Slide 5 Bottom) -->
+        <div class="what-shows-card">
+          <div class="what-shows-title"><i class="fa-solid fa-chart-line"></i> What This Shows</div>
+          <div class="what-shows-grid">
+            <div class="what-item">
+              <h4>Scope Control</h4>
+              <p>Seven novelty features defined and delivered within the Jan – Jul 2026 timeline without scope creep.</p>
+            </div>
+            <div class="what-item">
+              <h4>Quality Measured, Not Assumed</h4>
+              <p>Each phase closes with a verifiable output, ending in usability, accuracy, and expert validation scores.</p>
+            </div>
+            <div class="what-item">
+              <h4>Documentation Discipline</h4>
+              <p>Requirements, UML models, validation instruments, and the complete thesis were all prepared by me.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide 6: Results, Metrics & Legal IP -->
+      <div class="results-grid">
+        
+        <!-- 4 Stat Metrics -->
+        <div class="results-stats-col">
+          
+          <div class="stat-card">
+            <div class="stat-number">87.80</div>
+            <div class="stat-label">SUS usability score</div>
+            <small style="color:var(--teal-primary); font-weight:700; font-size:11.5px;">Grade A, Excellent · 22 respondents</small>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">1.82%</div>
+            <div class="stat-label">Spatial margin of error</div>
+            <small style="color:var(--teal-primary); font-weight:700; font-size:11.5px;">Well within the 5% threshold</small>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Expert validation</div>
+            <small style="color:var(--teal-primary); font-weight:700; font-size:11.5px;">Rated Highly Feasible</small>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number" style="font-size:28px;">J-SIGN</div>
+            <div class="stat-label">Article accepted</div>
+            <small style="color:var(--teal-primary); font-weight:700; font-size:11.5px;">SINTA 4 journal, co-author</small>
+          </div>
+
+        </div>
+
+        <!-- Registered & Published Certificates (Slide 6 Right) -->
+        <div class="results-docs-col">
+          <div class="docs-col-title"><i class="fa-solid fa-stamp"></i> Registered and Published</div>
+          
+          <div class="docs-thumbnails-row">
+            <div class="doc-thumb-item lightbox-trigger" data-img="images/cert-copyright.png" data-caption="Copyright Registration — Program Komputer (Surat Pencatatan Ciptaan No. 001266099), Ministry of Law of the Republic of Indonesia, 2026">
+              <img src="images/cert-copyright.png" alt="Surat Pencatatan Ciptaan">
+              <div class="doc-thumb-caption">Copyright registration, Ministry of Law (2026)</div>
+            </div>
+
+            <div class="doc-thumb-item lightbox-trigger" data-img="images/letter-jsign.png" data-caption="J-SIGN Acceptance Letter — Journal of Informatics, Information System, and Artificial Intelligence (SINTA 4)">
+              <img src="images/letter-jsign.png" alt="Acceptance letter J-SIGN">
+              <div class="doc-thumb-caption">Acceptance letter, J-SIGN Vol. 4 No. 2 (SINTA 4)</div>
+            </div>
+          </div>
+
+          <div class="outcome-callout">
+            <i class="fa-solid fa-check-double"></i> <strong>Outcome:</strong> A deployed, measured, and published system, delivered from proposal to agency use as Project Lead.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: CASE STUDY 2 — IT SUPPORT INTERNSHIP (Slides 7, 8)
+       ========================================================================== -->
+  <section id="itsupport" style="background:#f4fbfb; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      
+      <div class="case-study-badge-bar">
+        <span class="cs-tag-box">CASE STUDY 2</span>
+        <span class="cs-tag-category">PROJECT EXPERIENCE</span>
+      </div>
+
+      <h2 class="cs-title-giant" style="font-size:clamp(32px, 4vw, 48px);">IT SUPPORT INTERNSHIP</h2>
+      <div class="cs-subtitle">Pengadilan Agama Tanjung Pati Kelas IB</div>
+
+      <div style="display:flex; gap:10px; margin-bottom:30px;">
+        <span class="pill-badge pill-teal"><i class="fa-solid fa-laptop-code"></i> IT Support Intern</span>
+        <span class="pill-badge pill-blue"><i class="fa-regular fa-calendar"></i> Jan – Mar 2025</span>
+        <span class="pill-badge pill-subtle"><i class="fa-solid fa-location-dot"></i> Tanjung Pati, West Sumatra</span>
+      </div>
+
+      <!-- Slide 7: Featured Build & Certificate -->
+      <div class="cs2-main-grid">
+        
+        <div class="duty-roster-box">
+          <div class="cs-section-subhead">FEATURED BUILD</div>
+          <h3 style="font-size:22px; font-weight:800; color:var(--teal-dark); margin-bottom:8px;">
+            Duty Roster &amp; Cleaning Monitoring System
+          </h3>
+          <p class="cs-p" style="margin-bottom:16px;">
+            A web application that makes it easier to schedule employee duty rosters (piket) and to monitor whether cleaning duty is carried out, so staff plan and track duty in one centralized place.
+          </p>
+
+          <!-- 3-Step Duty Flow -->
+          <div class="duty-flow-steps">
+            <div class="duty-step-item">
+              <div class="duty-step-num">1</div>
+              <div class="duty-step-content">
+                <h5>Schedule</h5>
+                <p>Assign employee duty rosters</p>
+              </div>
+            </div>
+            <div class="duty-step-item">
+              <div class="duty-step-num">2</div>
+              <div class="duty-step-content">
+                <h5>Perform</h5>
+                <p>Staff follow posted duties</p>
+              </div>
+            </div>
+            <div class="duty-step-item">
+              <div class="duty-step-num">3</div>
+              <div class="duty-step-content">
+                <h5>Monitor</h5>
+                <p>Track cleaning completion</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:8px;">
+            <span class="tech-pill tp-php">PHP</span>
+            <span class="tech-pill tp-mysql">MySQL</span>
+          </div>
+
+          <div class="outcome-callout" style="margin-top:20px; background:var(--teal-light); border-color:var(--teal-primary); color:var(--teal-dark);">
+            <i class="fa-solid fa-screwdriver-wrench"></i> <strong>Beyond the build:</strong> Tier-1 support, network upkeep, and a repaired visitor queue machine.
+          </div>
+        </div>
+
+        <!-- Certificate Card -->
+        <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
+          <div class="cs-section-subhead">OFFICIAL CERTIFICATION</div>
+          <div style="text-align:center; padding:10px 0;">
+            <img src="images/cert-internship.png" alt="Sertifikat Magang Pengadilan Agama" class="lightbox-trigger" style="max-height:220px; margin:0 auto; cursor:pointer;" data-caption="Internship Certificate — Pengadilan Agama Tanjung Pati Kelas IB (14 January – 14 March 2025)">
+          </div>
+          <div style="font-size:12px; color:var(--ink-muted); text-align:center;">
+            Internship certificate, Pengadilan Agama Tanjung Pati Kelas IB, 14 Jan – 14 Mar 2025
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide 8: Spatial & Operational Deliverables -->
+      <div style="margin-top:40px;">
+        <div class="cs-section-subhead" style="margin-bottom:15px;">CASE STUDY 2 · SPATIAL &amp; OPERATIONAL DELIVERABLES</div>
+
+        <div class="spatial-deliverables-grid">
+          
+          <!-- AutoCAD Plan -->
+          <div class="autocad-card">
+            <img src="images/floorplan-autocad.png" alt="AutoCAD Office Floor Plan Signage" class="lightbox-trigger" data-caption="Office Floor Plan Signage (AutoCAD) — Pengadilan Agama Tanjung Pati Kelas IB">
+            <div class="autocad-label"><i class="fa-solid fa-compass-drafting"></i> Office floor plan signage (AutoCAD)</div>
+          </div>
+
+          <!-- 4 Deliverables -->
+          <div>
+            <div class="ops-cards-col">
+              
+              <div class="ops-deliverable-item">
+                <h4>3 Office Signage Maps</h4>
+                <p>Ground floor, second floor, and outdoor area, drawn in AutoCAD to guide navigation around the office premises.</p>
+              </div>
+
+              <div class="ops-deliverable-item">
+                <h4>Jurisdiction Map</h4>
+                <p>A map showing the area under the court's responsibility, turning the jurisdiction scope into a clear visual guide.</p>
+              </div>
+
+              <div class="ops-deliverable-item">
+                <h4>Visitor Queue Machine Repair</h4>
+                <p>Diagnosed the hardware fault and repaired the queue machine, restoring self-service registration for visitors.</p>
+              </div>
+
+              <div class="ops-deliverable-item">
+                <h4>Tier-1 IT Support &amp; Upkeep</h4>
+                <p>Resolved hardware, software, and network issues; maintained LAN, Wi-Fi, user credentials, IT inventory, and regular backups.</p>
+              </div>
+
+            </div>
+
+            <!-- Skills Demonstrated Callout (Slide 8 Bottom) -->
+            <div class="skills-demo-box">
+              <div class="skills-demo-title"><i class="fa-solid fa-lightbulb"></i> Skills Demonstrated</div>
+              <div class="skills-demo-text">
+                Turning an operational need into a working tool or deliverable, hands-on troubleshooting, and explaining technical solutions clearly to non-technical staff.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: LEADERSHIP & FACILITATION (Slides 9, 13)
+       ========================================================================== -->
+  <section id="leadership">
+    <div class="wrap">
+      
+      <div class="section-kicker"><i class="fa-solid fa-users"></i> Leadership &amp; Community</div>
+      <h2 class="section-title" style="margin-bottom:8px;">PERMIKOMNAS Region XV Lampung</h2>
+      <p class="section-intro" style="margin-bottom:30px;">
+        <strong>Regional Secretary</strong> (Apr – Aug 2025), then <strong>Regional Coordinator</strong> (Aug 2025 – Sep 2026).
+      </p>
+
+      <!-- Slide 9: 4 Big Numbers & Impact -->
+      <div class="leadership-grid">
+        
+        <div class="leadership-text-card">
+          <!-- 4 Stat Numbers -->
+          <div class="about-stats-grid" style="margin-top:0; margin-bottom:24px;">
+            <div class="stat-card">
+              <div class="stat-number">11</div>
+              <div class="stat-label">student associations</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10</div>
+              <div class="stat-label">university campuses</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">8</div>
+              <div class="stat-label">regional programs</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">2</div>
+              <div class="stat-label">associations joined</div>
+            </div>
+          </div>
+
+          <div class="cs-section-subhead">IMPACT &amp; RESPONSIBILITIES</div>
+          <ul class="cs-role-list">
+            <li>Coordinated 11 student associations across 10 universities in Lampung Province, serving as the single regional point of contact.</li>
+            <li>Initiated and coordinated 8 regional programs and activities in partnership with the executive management team.</li>
+            <li>Mapped target student associations and led outreach and branding that brought in 2 new member associations.</li>
+            <li>Led cross-institution communication and partnership outreach, keeping activities aligned with national board objectives.</li>
+            <li>As Secretary, managed official correspondence, partnership proposals, and complete regional administration.</li>
+          </ul>
+        </div>
+
+        <!-- Photos: Handover & Congress -->
+        <div class="leadership-photos-col">
+          <div class="leadership-photo-card">
+            <img src="images/permikomnas-handover.png" alt="PERMIKOMNAS Handover Ceremony" class="lightbox-trigger" data-caption="PERMIKOMNAS Region XV Lampung — Official Handover &amp; Strategic Meeting">
+            <div style="padding:10px 14px; font-size:12px; font-weight:700; color:var(--teal-dark);">
+              Official Handover &amp; Regional Secretariat
+            </div>
+          </div>
+
+          <div class="leadership-photo-card">
+            <img src="images/permikomnas-group.png" alt="PERMIKOMNAS Regional Congress Group Photo" class="lightbox-trigger" data-caption="Musyawarah Wilayah XV PERMIKOMNAS — Regional Congress &amp; Delegation">
+            <div style="padding:10px 14px; font-size:12px; font-weight:700; color:var(--teal-dark);">
+              Regional Congress with 11 Campus Associations
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide 13: Speaking & Facilitation -->
+      <div style="margin-top:20px;">
+        <div class="section-kicker"><i class="fa-solid fa-microphone-lines"></i> Speaking &amp; Facilitation</div>
+        <h3 style="font-size:26px; font-weight:800; color:var(--teal-dark); margin-bottom:25px;">
+          Public Speaking &amp; International Facilitation
+        </h3>
+
+        <div class="speaking-grid">
+          
+          <!-- Event 1: HMIF ITERA -->
+          <div class="speaking-card">
+            <div>
+              <span class="pill-badge pill-gold" style="margin-bottom:8px;">Guest Speaker</span>
+              <h4 style="font-size:18px; font-weight:800; color:var(--teal-dark);">HMIF ITERA Cadre Development Program</h4>
+              <p style="font-size:12px; color:var(--ink-muted); margin-bottom:12px;">Organizational Management · Sep 2025</p>
+              <div class="stat-number" style="font-size:28px;">~60 <span style="font-size:14px; color:var(--ink-muted); font-weight:600;">participants</span></div>
+            </div>
+
+            <ul class="cs-role-list" style="margin:14px 0;">
+              <li>Delivered a session on organizational governance, coordination, and leadership development.</li>
+              <li>Shared practical coordination experience from leading a multi-campus regional organization.</li>
+            </ul>
+
+            <div class="speaking-img-box">
+              <img src="images/speaking-hmif.png" alt="Speaking at HMIF ITERA" class="lightbox-trigger" data-caption="Guest Speaker at HMIF ITERA Cadre Development Program (Sep 2025)">
+            </div>
+          </div>
+
+          <!-- Event 2: ICHASTI -->
+          <div class="speaking-card">
+            <div>
+              <span class="pill-badge pill-teal" style="margin-bottom:8px;">Moderator &amp; Operator</span>
+              <h4 style="font-size:18px; font-weight:800; color:var(--teal-dark);">ICHASTI International Conference</h4>
+              <p style="font-size:12px; color:var(--ink-muted); margin-bottom:12px;">Moderator (2026) · Administrative Staff (2025)</p>
+              <div class="stat-number" style="font-size:28px;">~250 <span style="font-size:14px; color:var(--ink-muted); font-weight:600;">attendees</span></div>
+            </div>
+
+            <ul class="cs-role-list" style="margin:14px 0;">
+              <li>Moderated sessions in English with international guest lecturers from Russia and Thailand.</li>
+              <li>Operated the event's technical run; managed guest and participant data in 2025.</li>
+            </ul>
+
+            <div class="speaking-img-box">
+              <img src="images/speaking-ichasti.png" alt="ICHASTI International Conference" class="lightbox-trigger" data-caption="Moderator &amp; Technical Run Operator at ICHASTI International Conference">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: OPERATIONS EXPERIENCE — MINIMARKET (Slide 10)
+       ========================================================================== -->
+  <section id="operations" style="background:#f4fbfb; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      
+      <div class="minimarket-banner">
+        
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:15px;">
+          <div>
+            <div class="section-kicker"><i class="fa-solid fa-store"></i> Operations Experience</div>
+            <h2 class="section-title">Family-Owned Minimarket</h2>
+            <div style="font-size:15px; font-weight:700; color:var(--teal-primary);">
+              Retail Operations &amp; Inventory Assistant · 2019 – Present
+            </div>
+          </div>
+          <span class="pill-badge pill-gold">Retail Operations</span>
+        </div>
+
+        <!-- 4 Stats (Slide 10) -->
+        <div class="about-stats-grid" style="margin-top:25px; margin-bottom:25px;">
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">SKUs monitored</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" style="font-size:28px;">Daily</div>
+            <div class="stat-label">sales reconciliation</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" style="font-size:28px;">Direct</div>
+            <div class="stat-label">customer service</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2019</div>
+            <div class="stat-label">involved since</div>
+          </div>
+        </div>
+
+        <!-- Split Narrative: Responsibilities & What This Shows -->
+        <div class="minimarket-grid">
+          
+          <div>
+            <div class="cs-section-subhead">OPERATIONAL RESPONSIBILITIES</div>
+            <ul class="cs-role-list">
+              <li>Monitored stock levels and product availability across 50+ SKUs as part of daily store operations.</li>
+              <li>Performed daily sales reconciliation and kept transaction records strictly accurate.</li>
+              <li>Coordinated with suppliers on stock availability, orders, and timely replenishment.</li>
+              <li>Served customers directly and supported day-to-day store operations in a family-owned business.</li>
+              <li><strong>Shows:</strong> inventory management, data accuracy, supplier relations, and customer insight.</li>
+            </ul>
+          </div>
+
+          <div style="background:var(--teal-subtle); border:1px solid var(--line); border-radius:var(--radius-md); padding:20px;">
+            <div class="cs-section-subhead">WHAT THIS SHOWS</div>
+            
+            <div style="margin-bottom:12px;">
+              <strong style="color:var(--teal-dark); font-size:13.5px; display:block;">Business operations</strong>
+              <small style="color:var(--ink-muted);">Daily exposure to stock, sales, and store flow</small>
+            </div>
+
+            <div style="margin-bottom:12px;">
+              <strong style="color:var(--teal-dark); font-size:13.5px; display:block;">Data accuracy</strong>
+              <small style="color:var(--ink-muted);">Daily sales records and inventory reconciliations</small>
+            </div>
+
+            <div style="margin-bottom:14px;">
+              <strong style="color:var(--teal-dark); font-size:13.5px; display:block;">Customer &amp; supplier view</strong>
+              <small style="color:var(--ink-muted);">Direct contact on both sides of a business</small>
+            </div>
+
+            <div class="outcome-callout" style="padding:10px 14px; font-size:12px;">
+              <strong>Why it matters:</strong> A first-hand view of the customers and partners a business serves.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: CASE STUDY 3 — RETAIL DIGITALIZATION (Slides 11, 12)
+       ========================================================================== -->
+  <section id="retail">
+    <div class="wrap">
+      
+      <div class="case-study-badge-bar">
+        <span class="cs-tag-box">CASE STUDY 3</span>
+        <span class="cs-tag-category">BUSINESS STRATEGY &amp; DIGITALIZATION</span>
+      </div>
+
+      <h2 class="cs-title-giant" style="font-size:clamp(32px, 4vw, 48px);">RETAIL DIGITALIZATION</h2>
+      <div class="cs-subtitle">Market Snapshot, Strategic Growth &amp; KPI Plan</div>
+
+      <div style="display:flex; gap:10px; margin-bottom:30px;">
+        <span class="pill-badge pill-gold">Independent Case Study</span>
+        <span class="pill-badge pill-subtle">Based on Publicly Available Information</span>
+      </div>
+
+      <!-- Slide 11: Market Snapshot & Competitors -->
+      <div class="cs3-snapshot-grid">
+        
+        <!-- 4 Stats -->
+        <div class="about-stats-grid" style="margin:0;">
+          <div class="stat-card">
+            <div class="stat-number">47,692</div>
+            <div class="stat-label">Micro businesses in Padang</div>
+            <small style="color:var(--ink-muted); font-size:11px;">Dec 2024, Dinas Koperasi &amp; UMKM Padang</small>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">42.75M</div>
+            <div class="stat-label">QRIS merchants, nationwide</div>
+            <small style="color:var(--ink-muted); font-size:11px;">Bank Indonesia, 2025</small>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">93%</div>
+            <div class="stat-label">of QRIS merchants are UMKM</div>
+            <small style="color:var(--ink-muted); font-size:11px;">Bank Indonesia, H1 2025</small>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number" style="font-size:26px;">55–299K</div>
+            <div class="stat-label">Rp per month, POS apps</div>
+            <small style="color:var(--ink-muted); font-size:11px;">Kasir Pintar to Moka, by plan</small>
+          </div>
+        </div>
+
+        <!-- Competitor Landscape -->
+        <div class="competitors-card">
+          <div class="cs-section-subhead">WHO ALREADY COMPETES</div>
+          
+          <div class="competitor-list">
+            <div class="competitor-row">
+              <div>
+                <div class="comp-name">Moka POS</div>
+                <div class="comp-desc">Cloud POS for retail and F&amp;B</div>
+              </div>
+              <div class="comp-price">from ~Rp299K/outlet</div>
+            </div>
+
+            <div class="competitor-row">
+              <div>
+                <div class="comp-name">Majoo</div>
+                <div class="comp-desc">All-in-one UMKM business app</div>
+              </div>
+              <div class="comp-price">from ~Rp149K/month</div>
+            </div>
+
+            <div class="competitor-row">
+              <div>
+                <div class="comp-name">Olsera</div>
+                <div class="comp-desc">Omnichannel POS platform</div>
+              </div>
+              <div class="comp-price">from ~Rp128K/month</div>
+            </div>
+
+            <div class="competitor-row">
+              <div>
+                <div class="comp-name">Kasir Pintar</div>
+                <div class="comp-desc">Simple interface for micro-merchants</div>
+              </div>
+              <div class="comp-price">from ~Rp55K/month</div>
+            </div>
+          </div>
+
+          <div class="outcome-callout" style="margin-top:14px;">
+            <i class="fa-solid fa-lightbulb"></i> <strong>Hypothesis to validate:</strong> Price and digital literacy, not tool availability, limit adoption by small Padang retailers.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slide 12: 6-Phase Strategic Framework & KPI Plan -->
+      <div class="kpi-framework-card">
+        <div class="cs-section-subhead" style="text-align:center;">STRATEGIC ROADMAP</div>
+        <div class="waterfall-subtitle">Growth &amp; KPI Implementation Pipeline</div>
+
+        <!-- 6 Step Cards -->
+        <div class="stepper-pipeline" style="margin-bottom:30px;">
+          <div class="step-card">
+            <div class="step-num-pill step-01">01</div>
+            <div class="step-title">Market Size</div>
+            <div class="step-desc">47,692 micro businesses in Padang; 42.75M QRIS merchants nationwide.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num-pill step-02">02</div>
+            <div class="step-title">Customer Needs</div>
+            <div class="step-desc">Local studies cite low digital literacy and weak financial record-keeping.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num-pill step-03">03</div>
+            <div class="step-title">Competitors</div>
+            <div class="step-desc">Moka, Majoo, Olsera, Kasir Pintar: mature tools (Rp55K–299K/mo).</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num-pill step-04">04</div>
+            <div class="step-title">Opportunity</div>
+            <div class="step-desc">Simple, affordable onboarding with local support for small retailers.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num-pill step-05">05</div>
+            <div class="step-title">Go-to-Market</div>
+            <div class="step-desc">Reach retailers via merchant associations and supplier networks.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num-pill step-06">06</div>
+            <div class="step-title">KPI Plan</div>
+            <div class="step-desc">Track adoption, activation, and retention; set targets after pilot baseline.</div>
+          </div>
+        </div>
+
+        <!-- Proposed KPI Framework -->
+        <div style="border-top:1px solid var(--line); padding-top:24px;">
+          <div class="cs-section-subhead"><i class="fa-solid fa-bullseye"></i> PROPOSED KPI FRAMEWORK</div>
+
+          <div class="kpi-framework-grid">
+            <div class="kpi-category-box">
+              <div class="kpi-cat-title"><i class="fa-solid fa-user-plus" style="color:var(--teal-primary)"></i> Acquisition</div>
+              <div class="kpi-cat-desc">
+                New merchants onboarded per month, and share of merchants reached via partner associations and supplier networks.
+              </div>
+            </div>
+
+            <div class="kpi-category-box">
+              <div class="kpi-cat-title"><i class="fa-solid fa-chart-line" style="color:var(--blue-accent)"></i> Activation &amp; Usage</div>
+              <div class="kpi-cat-desc">
+                Merchants recording sales within 14 days of signup; weekly active transaction volume per registered merchant.
+              </div>
+            </div>
+
+            <div class="kpi-category-box">
+              <div class="kpi-cat-title"><i class="fa-solid fa-repeat" style="color:var(--gold-accent)"></i> Retention &amp; Value</div>
+              <div class="kpi-cat-desc">
+                30- and 90-day retention rate; share of sales paid via QRIS; reduction in time required to onboard a new merchant.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <small style="display:block; margin-top:16px; font-size:11px; color:var(--ink-muted); text-align:center;">
+          Sources: Dinas Koperasi &amp; UMKM Kota Padang (Dec 2024); Bank Indonesia QRIS data (2025); POS comparisons by HitPay &amp; UKM Indonesia.
+        </small>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: OTHER PROJECTS (Slide 14)
+       ========================================================================== -->
+  <section id="projects" style="background:#f4fbfb; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      
+      <div class="section-kicker"><i class="fa-solid fa-shapes"></i> More Work</div>
+      <h2 class="section-title" style="margin-bottom:35px;">Other Projects</h2>
+
+      <div class="other-projects-grid">
+        
+        <!-- Project 1: Smart & Green Campus Map -->
+        <div class="other-proj-card">
+          <img src="images/project-smart-green.png" alt="Smart & Green Campus Map" class="other-proj-img lightbox-trigger" data-caption="Smart & Green Campus Thematic Map — 3rd Place National (KST PTKI II, 2026)">
+          <div style="margin-bottom:8px;">
+            <span class="pill-badge pill-gold" style="font-size:10px;">3rd Place National</span>
+          </div>
+          <div class="other-proj-title">Smart &amp; Green Campus Map</div>
+          <div class="other-proj-desc">
+            Thematic map of green and disability-accessible facilities across the campus, built in Google My Maps. Team of three. KST PTKI II, 2026.
+          </div>
+          <div style="display:flex; gap:6px;">
+            <span class="tech-pill tp-leaflet" style="font-size:10px; padding:3px 8px;">My Maps</span>
+            <span class="tech-pill tp-gis" style="font-size:10px; padding:3px 8px;">Spatial</span>
+          </div>
+        </div>
+
+        <!-- Project 2: RideCamp -->
+        <div class="other-proj-card">
+          <img src="images/project-ridecamp.png" alt="RideCamp Mobile App Prototype" class="other-proj-img lightbox-trigger" data-caption="RideCamp Mobile App Prototype — 104 pages interface documentation, Figma UI/UX">
+          <div style="margin-bottom:8px;">
+            <span class="pill-badge pill-blue" style="font-size:10px;">Figma · UI/UX</span>
+          </div>
+          <div class="other-proj-title">RideCamp</div>
+          <div class="other-proj-desc">
+            Campus ride-hailing and food-ordering app prototype. 104 pages of interface documentation, usability tested with 30 users.
+          </div>
+          <div style="display:flex; gap:6px;">
+            <span class="tech-pill tp-boot" style="font-size:10px; padding:3px 8px;">Figma</span>
+            <span class="tech-pill tp-ci" style="font-size:10px; padding:3px 8px;">UI/UX</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Lingosphere -->
+        <div class="other-proj-card">
+          <img src="images/project-lingosphere.png" alt="Lingosphere Gamified App Prototype" class="other-proj-img lightbox-trigger" data-caption="Lingosphere English-Learning App Prototype with Gamification">
+          <div style="margin-bottom:8px;">
+            <span class="pill-badge pill-teal" style="font-size:10px;">Figma · Gamification</span>
+          </div>
+          <div class="other-proj-title">Lingosphere</div>
+          <div class="other-proj-desc">
+            Gamified English-learning app prototype: word matching and vocabulary, sentence completion with feedback, and a leaderboard.
+          </div>
+          <div style="display:flex; gap:6px;">
+            <span class="tech-pill tp-boot" style="font-size:10px; padding:3px 8px;">Figma</span>
+            <span class="tech-pill tp-turf" style="font-size:10px; padding:3px 8px;">Gamification</span>
+          </div>
+        </div>
+
+        <!-- Project 4: IoT Soil Moisture System -->
+        <div class="other-proj-card">
+          <img src="images/project-iot-soil.png" alt="IoT Soil Moisture System Architecture" class="other-proj-img lightbox-trigger" data-caption="IoT Soil Moisture Automatic Watering Loop — Sense > Decide > Water">
+          <div style="margin-bottom:8px;">
+            <span class="pill-badge pill-navy" style="font-size:10px;">Nov 2024 · IoT</span>
+          </div>
+          <div class="other-proj-title">IoT Soil Moisture System</div>
+          <div class="other-proj-desc">
+            Soil moisture monitoring that triggers automatic watering based on the condition of the planting medium (Sense > Decide > Water loop).
+          </div>
+          <div style="display:flex; gap:6px;">
+            <span class="tech-pill tp-ci" style="font-size:10px; padding:3px 8px;">ESP8266</span>
+            <span class="tech-pill tp-leaflet" style="font-size:10px; padding:3px 8px;">Hardware</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bonus: IT Helpdesk Simulation link -->
+      <div style="margin-top:30px; background:#ffffff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+        <div>
+          <span class="pill-badge pill-teal" style="margin-bottom:6px;">Live Interactive Prototype</span>
+          <h4 style="font-size:18px; font-weight:800; color:var(--teal-dark);">Enterprise IT Helpdesk &amp; Asset Management Simulation</h4>
+          <p style="font-size:13px; color:var(--ink-muted);">Experience the interactive ticket workflow, SLA tracking, and IT asset analytics dashboard prototype.</p>
+        </div>
+        <a href="it-helpdesk.html" class="btn btn-primary">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open IT Helpdesk Simulation
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 9: AWARDS & PUBLICATIONS (Slide 15)
+       ========================================================================== -->
+  <section id="awards">
+    <div class="wrap">
+      
+      <div class="section-kicker"><i class="fa-solid fa-trophy"></i> Recognition</div>
+      <h2 class="section-title" style="margin-bottom:35px;">Awards &amp; Publications</h2>
+
+      <div class="awards-grid">
+        
+        <!-- Award 1: Copyright Registration -->
+        <div class="award-card">
+          <div class="award-img-box lightbox-trigger" data-img="images/cert-copyright.png" data-caption="Copyright Registration — Surat Pencatatan Ciptaan (Program Komputer No. 001266099), Ministry of Law of the Republic of Indonesia, 2026">
+            <img src="images/cert-copyright.png" alt="Copyright Registration Surat Pencatatan Ciptaan">
+          </div>
+          <div class="award-title">Copyright Registration</div>
+          <div class="award-desc">
+            AgrimapGIS registered as a computer program, Ministry of Law of the Republic of Indonesia, 2026 (No. 001266099).
+          </div>
+        </div>
+
+        <!-- Award 2: J-SIGN Publication -->
+        <div class="award-card">
+          <div class="award-img-box lightbox-trigger" data-img="images/letter-jsign.png" data-caption="J-SIGN Journal Publication Acceptance Letter (SINTA 4) — Vol. 4 No. 2, 2026">
+            <img src="images/letter-jsign.png" alt="J-SIGN Acceptance Letter">
+          </div>
+          <div class="award-title">J-SIGN Publication</div>
+          <div class="award-desc">
+            Article accepted for J-SIGN Vol. 4 No. 2, 2026 (SINTA 4). Co-authored with the academic advisors and team members.
+          </div>
+        </div>
+
+        <!-- Award 3: 3rd Place National -->
+        <div class="award-card">
+          <div class="award-img-box lightbox-trigger" data-img="images/cert-juara3.png" data-caption="3rd Place National Award — Thematic Map Competition, Smart & Green Campus, KST PTKI II 2026">
+            <img src="images/cert-juara3.png" alt="3rd Place National Certificate">
+          </div>
+          <div class="award-title">3rd Place, National</div>
+          <div class="award-desc">
+            Thematic Map Competition, Smart &amp; Green Campus, KST PTKI II (Apr – Jun 2026).
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 10: CERTIFICATIONS & TOOLS (Slide 16)
+       ========================================================================== -->
+  <section id="certifications" style="background:#f4fbfb; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      
+      <div class="section-kicker"><i class="fa-solid fa-certificate"></i> Competency</div>
+      <h2 class="section-title" style="margin-bottom:8px;">Certifications &amp; Tools</h2>
+      <p class="section-intro" style="margin-bottom:30px;">
+        Professional credentials issued in Project Management, Technology Risk, and Systems Strategy. Full verified set available on LinkedIn.
+      </p>
+
+      <!-- 8 Certificates Grid (Slide 16 Top) -->
+      <div class="certs-grid-8">
+        
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-bus402.png" data-caption="Project Management (BUS402), Saylor Academy · Score: 95.56%">
+          <img src="images/cert-bus402.png" alt="Saylor BUS402 Project Management">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">Project Management (BUS402)</div>
+            <div class="cert-mini-issuer">Saylor · 95.56%</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-bus501.png" data-caption="Strategic Management (BUS501), Saylor Academy · Score: 90.70%">
+          <img src="images/cert-bus501.png" alt="Saylor BUS501 Strategic Management">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">Strategic Management (BUS501)</div>
+            <div class="cert-mini-issuer">Saylor · 90.70%</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-ai-asean.png" data-caption="AI Career Readiness, ASEAN Foundation & Microsoft">
+          <img src="images/cert-ai-asean.png" alt="AI Career Readiness ASEAN">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">AI Career Readiness</div>
+            <div class="cert-mini-issuer">ASEAN Foundation</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-toefl.png" data-caption="TOEFL-Equivalent 450, Language Development Center UIN Raden Intan Lampung">
+          <img src="images/cert-toefl.png" alt="TOEFL UIN Raden Intan">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">TOEFL-equivalent 450</div>
+            <div class="cert-mini-issuer">UIN Raden Intan</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-cbre.png" data-caption="CBRE Project Management Job Simulation (Forage)">
+          <img src="images/cert-cbre.png" alt="CBRE Project Management Forage">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">CBRE Project Management</div>
+            <div class="cert-mini-issuer">Forage</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-siemens.png" data-caption="Siemens Project Manager Job Simulation (Forage)">
+          <img src="images/cert-siemens.png" alt="Siemens Project Manager Forage">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">Siemens Project Manager</div>
+            <div class="cert-mini-issuer">Forage</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-ey.png" data-caption="EY Technology Risk Virtual Job Simulation (Forage)">
+          <img src="images/cert-ey.png" alt="EY Technology Risk Forage">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">EY Technology Risk</div>
+            <div class="cert-mini-issuer">Forage</div>
+          </div>
+        </div>
+
+        <div class="cert-mini-card lightbox-trigger" data-img="images/cert-deloitte.png" data-caption="Deloitte Technology Job Simulation (Forage)">
+          <img src="images/cert-deloitte.png" alt="Deloitte Technology Forage">
+          <div class="cert-mini-info">
+            <div class="cert-mini-title">Deloitte Technology</div>
+            <div class="cert-mini-issuer">Forage</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tools & Stack Categorization (Slide 16 Bottom) -->
+      <div class="tools-stack-banner">
+        <div class="cs-section-subhead"><i class="fa-solid fa-toolbox"></i> SOFTWARE &amp; DIGITAL TOOLS</div>
+
+        <div class="tools-categories-grid">
+          
+          <div class="tool-category-card">
+            <div class="tool-cat-title"><i class="fa-regular fa-folder-closed"></i> PROJECT &amp; DOCUMENTATION</div>
+            <div class="tool-tags-wrap">
+              <span class="tool-tag-item"><i class="fa-solid fa-file-word" style="color:#2563eb"></i> Word</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-file-powerpoint" style="color:#ea580c"></i> PowerPoint</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-file-excel" style="color:#16a34a"></i> Excel</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-note-sticky" style="color:#111827"></i> Notion</span>
+              <span class="tool-tag-item"><i class="fa-brands fa-google" style="color:#ea4335"></i> Google Workspace</span>
+            </div>
+          </div>
+
+          <div class="tool-category-card">
+            <div class="tool-cat-title"><i class="fa-solid fa-database"></i> SYSTEM DEVELOPMENT &amp; DATA</div>
+            <div class="tool-tags-wrap">
+              <span class="tool-tag-item"><i class="fa-brands fa-php" style="color:#4f46e5"></i> PHP</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-server" style="color:#0284c7"></i> MySQL</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-fire" style="color:#ea580c"></i> CodeIgniter 4</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-map" style="color:#16a34a"></i> Leaflet.js</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-draw-polygon" style="color:#f59e0b"></i> Turf.js</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-earth-americas" style="color:#059669"></i> QGIS</span>
+              <span class="tool-tag-item"><i class="fa-brands fa-github" style="color:#111827"></i> GitHub</span>
+            </div>
+          </div>
+
+          <div class="tool-category-card">
+            <div class="tool-cat-title"><i class="fa-solid fa-pen-ruler"></i> DESIGN &amp; VISUALIZATION</div>
+            <div class="tool-tags-wrap">
+              <span class="tool-tag-item"><i class="fa-brands fa-figma" style="color:#a855f7"></i> Figma</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-compass-drafting" style="color:#dc2626"></i> AutoCAD</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-location-dot" style="color:#ef4444"></i> Google My Maps</span>
+              <span class="tool-tag-item"><i class="fa-solid fa-chart-column" style="color:#0284c7"></i> Chart.js</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 11: THANK YOU & CONTACT (Slide 17)
+       ========================================================================== -->
+  <section id="contact">
+    <div class="wrap">
+      
+      <div class="thankyou-deck">
+        <div class="thankyou-grid">
+          
+          <!-- Left: Big typography, statement, signature, contact info -->
+          <div>
+            <h2 class="thankyou-huge-title">THANK<br>YOU.</h2>
+            
+            <p class="thankyou-subtitle">
+              Ready to support project planning, coordination, business development, and documentation with a structured approach.
+            </p>
+
+            <div class="thankyou-signature">
+              <img src="images/signature-white.png" alt="Signature Annisa Fazhira">
+            </div>
+
+            <!-- Contact Box (Slide 17) -->
+            <div class="thankyou-contact-card">
+              <a href="mailto:annisarara100@gmail.com">
+                <i class="fa-regular fa-envelope"></i> annisarara100@gmail.com
+              </a>
+              <a href="https://wa.me/6289534708703" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> +62 895-3470-8703
+              </a>
+              <a href="https://linkedin.com/in/annisa-fazhira-390906249" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> linkedin.com/in/annisa-fazhira-390906249
+              </a>
+              <a href="https://github.com/raansfz29" target="_blank">
+                <i class="fa-brands fa-github"></i> github.com/raansfz29 · raansfz29.github.io/annisa-portfolio
+              </a>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="mailto:annisarara100@gmail.com" class="btn btn-gold btn-lg">
+                <i class="fa-solid fa-paper-plane"></i> Send Direct Email
+              </a>
+              <a href="Portofolio_Annisa_Fazhira.pdf" download class="btn btn-ghost-white btn-lg">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF Portfolio
+              </a>
+              <a href="CV_Annisa_Fazhira.pdf" download class="btn btn-ghost-white btn-lg">
+                <i class="fa-solid fa-download"></i> Download CV
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Photo Cutout in Suit (Slide 17) -->
+          <div class="thankyou-avatar-box">
+            <img src="images/annisa-hero-cutout.png" alt="Annisa Fazhira">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <div class="footer-copy">
+        © 2026 <b>Annisa Fazhira, S.Kom.</b> — Project Management &amp; Information Systems
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#agrimap">AgrimapGIS</a>
+        <a href="#itsupport">IT Support</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+        <a href="CV_Annisa_Fazhira.pdf" download style="color:var(--gold-accent); font-weight:700;">CV.pdf</a>
+        <a href="Portofolio_Annisa_Fazhira.pdf" download style="color:var(--teal-primary); font-weight:700;">Portfolio.pdf</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       IMAGE & CERTIFICATE LIGHTBOX MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="lightboxModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title" id="lightboxTitle">Document Preview</div>
+        <button class="modal-close-btn" id="lightboxCloseBtn">&times;</button>
+      </div>
+      <div class="modal-content-body">
+        <img src="" id="lightboxImg" alt="Document Full View">
+        <div class="modal-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SLIDE DECK VIEWER MODAL (17 SLIDES)
+       ========================================================================== -->
+  <div class="modal-overlay" id="deckModal">
+    <div class="modal-container deck-carousel-modal">
+      <div class="modal-header">
+        <div class="modal-title">
+          <i class="fa-solid fa-presentation"></i> Annisa Fazhira — Presentation Deck (<span id="slideCounter">1 / 17</span>)
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <a href="Portofolio_Annisa_Fazhira.pdf" download class="btn btn-sm btn-primary">
+            <i class="fa-solid fa-download"></i> Download PDF
+          </a>
+          <button class="modal-close-btn" id="deckCloseBtn">&times;</button>
+        </div>
+      </div>
+      
+      <div class="modal-content-body" style="padding:16px;">
+        <div class="carousel-slide-view">
+          <img src="images/deck/slide-1.png" id="deckMainSlide" alt="Presentation Slide View">
+          <button class="carousel-nav-btn btn-prev" id="slidePrevBtn" aria-label="Previous Slide">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="carousel-nav-btn btn-next" id="slideNextBtn" aria-label="Next Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Thumbnails Strip -->
+        <div class="carousel-thumbs-strip" id="thumbsStrip">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
